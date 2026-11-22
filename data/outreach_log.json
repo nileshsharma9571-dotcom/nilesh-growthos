@@ -1,0 +1,28 @@
+{
+  "sent_clients": [
+    "dr.sharma.apexjaipur@gmail.com"
+  ],
+  "history": [
+    {
+      "timestamp": "2026-11-22T16:41:32.657499",
+      "type": "client",
+      "recipient": "dr.sharma.apexjaipur@gmail.com",
+      "business": "Apex Multispeciality Dental & Implant Hospital"
+    },
+    {
+      "timestamp": "2026-11-22T16:41:34.322539",
+      "type": "job",
+      "recipient": "careers@klimbgrowth.com",
+      "role": "Performance Marketing Executive (Meta & Google Ads)",
+      "company": "Klimb Growth Labs India"
+    }
+  ],
+  "sent_jobs": [
+    "careers@klimbgrowth.com"
+  ],
+  "replied_contacts": [
+    "mailer-daemon@googlemail.com",
+    "no-reply@accounts.google.com",
+    "no-reply@google.com"
+  ]
+}
