@@ -1,0 +1,52 @@
+{
+  "name": "Nilesh Acharya (Nilesh Sharma)",
+  "contact": {
+    "phone": "+91 95713 34850",
+    "whatsapp": "+91 95713 34850",
+    "job_email": "nileshsharma3011@gmail.com",
+    "client_email": "nileshsharma.digitalgrowth@gmail.com",
+    "website": "",
+    "location": "Kotputli, Jaipur, Rajasthan"
+  },
+  "credentials": {
+    "job_email": "nileshsharma3011@gmail.com",
+    "job_app_password": "rtdwygvuogfzceml",
+    "client_email": "nileshsharma.digitalgrowth@gmail.com",
+    "client_app_password": "xwyepacugcoqnsht"
+  },
+  "experience": [
+    {
+      "role": "Digital Marketing Executive",
+      "company": "Leelmax Infotech",
+      "location": "Bhakrota, Jaipur",
+      "duration": "28 January 2025 – 27 May 2025 (4 months)",
+      "highlights": "Google Ads & Meta Ads campaigns, SMM, WordPress development, on-page SEO, landing page conversion optimization"
+    },
+    {
+      "role": "Social Media Handler",
+      "company": "NFPCY Real Estate",
+      "location": "Neemrana, Rajasthan",
+      "duration": "28 May 2025 – 1 July 2025 (1 month)",
+      "highlights": "Real estate property creatives (Canva & AI tools), reels planning, DM lead qualification, weekly engagement reporting"
+    }
+  ],
+  "certifications": [
+    "9x Google Ads Certificates (Google)",
+    "SEO Certificate (Semrush Academy)",
+    "Email Marketing (HubSpot Academy)",
+    "Amazon ATES Certificate (Amazon)"
+  ],
+  "target_office_cities": [
+    "Jaipur",
+    "Delhi",
+    "Gurugram",
+    "Manesar",
+    "Neemrana",
+    "Alwar",
+    "Kotputli"
+  ],
+  "target_remote": "All-India Work From Home (WFH)",
+  "minimum_job_match_score": 80,
+  "greeting_style": "Radhe Radhe Sir 🙏",
+  "resume_pdf_path": "C:\\\\Users\\\\hp\\\\.gemini\\\\antigravity\\\\scratch\\\\client-job-automation\\\\data\\\\Nilesh_Acharya_Resume.pdf"
+}
