@@ -1,0 +1,38 @@
+name: GrowthOS 24x7 Cloud Dispatcher
+
+on:
+  schedule:
+    # Runs Monday to Saturday every 2 hours from 04:00 UTC to 13:00 UTC (09:30 AM to 06:30 PM IST)
+    - cron: '0 4,6,8,10,12 * * 1-6'
+  workflow_dispatch: # Allows manual trigger from GitHub UI anytime
+
+jobs:
+  run-growth-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Drip Outreach & Job Matcher
+        env:
+          JOB_EMAIL: ${{ secrets.JOB_EMAIL }}
+          JOB_APP_PASS: ${{ secrets.JOB_APP_PASS }}
+          CLIENT_EMAIL: ${{ secrets.CLIENT_EMAIL }}
+          CLIENT_APP_PASS: ${{ secrets.CLIENT_APP_PASS }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python dispatch_emails.py
+          python follow_up_engine.py
+
+      - name: Commit Updated Logs
+        run: |
+          git config --global user.name "GrowthOS Cloud Bot"
+          git config --global user.email "bot@growthos.cloud"
+          git add data/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: automated daily drip & follow-up logs [skip ci]" && git push)
