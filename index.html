@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GrowthOS Pro &bull; Nilesh Acharya (Digital Marketing Hub)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --card-inner: #0b111e;
+      --card-border: #1e293b;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --green: #22c55e;
+      --green-dark: #16a34a;
+      --purple: #a855f7;
+      --orange: #f97316;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 16px 12px 60px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* Top Bar */
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      margin-bottom: 20px;
+    }
+    .profile-badge {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    }
+    .user-info h1 { font-size: 19px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
+    .user-info p { font-size: 12.5px; color: var(--text-muted); margin-top: 2px; }
+    .header-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #4ade80;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .badge-status::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+    }
+
+    /* Metrics Bar */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+    .metric-card .label { font-size: 11.5px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px; }
+    .metric-card .val { font-size: 26px; font-weight: 800; color: #fff; margin-top: 4px; }
+    .metric-card .sub { font-size: 11.5px; color: var(--accent); margin-top: 3px; }
+
+    /* Tabs */
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 8px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { background: #1e293b; color: #fff; }
+    .tab-btn.active {
+      background: var(--accent-glow);
+      color: var(--accent);
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+    .badge-count {
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.1);
+      color: inherit;
+    }
+
+    /* Controls Bar */
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+    .search-input {
+      flex: 1;
+      min-width: 220px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 9px;
+      padding: 10px 14px;
+      color: #fff;
+      font-size: 13.5px;
+      outline: none;
+    }
+    .search-input:focus { border-color: var(--accent); }
+    .filter-select {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 9px;
+      padding: 10px 14px;
+      color: #fff;
+      font-size: 13px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 20px;
+    }
+    @media (max-width: 600px) {
+      .cards-grid { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      border-color: rgba(56, 189, 248, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .card-title { font-size: 16.5px; font-weight: 800; color: #fff; line-height: 1.3; }
+    .card-meta { font-size: 12.5px; color: var(--text-muted); margin-top: 4px; display: flex; gap: 6px; align-items: center; }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .tag-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56,189,248,0.3); }
+    .tag-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168,85,247,0.3); }
+    .tag-green { background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+    .tag-orange { background: rgba(249, 115, 22, 0.15); color: #fb923c; border: 1px solid rgba(249,115,22,0.3); }
+
+    .audit-box {
+      background: var(--card-inner);
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12.5px;
+    }
+    .audit-problem { color: #fb923c; line-height: 1.45; }
+    .audit-solution { color: #7dd3fc; line-height: 1.45; }
+
+    .pitch-box {
+      background: #070c16;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .pitch-head {
+      background: #0f172a;
+      padding: 8px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1e293b;
+    }
+    .pitch-head span { font-size: 11.5px; font-weight: 700; text-transform: uppercase; color: var(--accent); }
+    .btn-copy-action {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .pitch-text {
+      padding: 12px;
+      font-size: 12px;
+      line-height: 1.55;
+      color: #cbd5e1;
+      max-height: 130px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+
+    .card-btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      flex: 1;
+      min-width: 120px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s;
+    }
+    .btn-wa { background: #22c55e; color: #fff; }
+    .btn-wa:hover { background: #16a34a; }
+    .btn-call { background: #334155; color: #fff; flex: 0 0 auto; min-width: auto; padding: 10px 14px; }
+    .btn-call:hover { background: #475569; }
+    .btn-apply { background: #0284c7; color: #fff; }
+    .btn-apply:hover { background: #0369a1; }
+    .btn-outline {
+      background: transparent;
+      color: #cbd5e1;
+      border: 1px solid #334155;
+      flex: 0 0 auto;
+      min-width: auto;
+      padding: 10px 12px;
+    }
+    .btn-outline:hover { background: #1e293b; color: #fff; }
+
+    /* Resume Section */
+    .resume-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .resume-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 20px;
+      margin-bottom: 22px;
+    }
+    .resume-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 800px) {
+      .resume-grid { grid-template-columns: 1fr; }
+    }
+    .resume-card {
+      background: var(--card-inner);
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .resume-card h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 6px;
+    }
+    .exp-item {
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed #1e293b;
+    }
+    .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .exp-title { font-size: 14.5px; font-weight: 700; color: #fff; }
+    .exp-sub { font-size: 12px; color: var(--text-muted); margin: 3px 0 6px; }
+    .exp-desc { font-size: 12.5px; color: #cbd5e1; line-height: 1.45; }
+    .cert-pill {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: #7dd3fc;
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      margin: 4px;
+      font-weight: 600;
+    }
+
+    .hidden { display: none !important; }
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #22c55e;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.6);
+      display: none;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="profile-badge">
+        <div class="avatar">NA</div>
+        <div class="user-info">
+          <h1>Nilesh Acharya &bull; Growth Command Center</h1>
+          <p>Digital Marketer | Kotputli, Jaipur | +91 95713 34850</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span class="badge-status">Hourly Drip Engine Active</span>
+        <a href="data/Nilesh_Acharya_Resume.pdf" target="_blank" class="btn btn-outline" style="font-size:12px; padding:6px 12px;">
+          &#128196; Download PDF Resume
+        </a>
+      </div>
+    </header>
+
+    <!-- Metrics Grid -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="label">Review Gap Leads</div>
+        <div class="val">6</div>
+        <div class="sub">Clinics, Gyms, Coaching (Jaipur, Alwar, Gurgaon)</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">WFH Remote Jobs</div>
+        <div class="val">3</div>
+        <div class="sub">90%+ Match (All-India Work From Home)</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Nearby Office Jobs</div>
+        <div class="val">3</div>
+        <div class="sub">Jaipur, Neemrana, Alwar, Gurugram, Delhi</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Top Match Score</div>
+        <div class="val" style="color: #4ade80;">96%</div>
+        <div class="sub">80%+ Minimum Cutoff Verified</div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" id="btn-tab-leads" onclick="switchTab('leads')">
+        <span>&#128188; Client Leads (Review Gap &amp; Pitches)</span>
+        <span class="badge-count" id="tab-lead-count">6</span>
+      </button>
+      <button class="tab-btn" id="btn-tab-wfh" onclick="switchTab('wfh')">
+        <span>&#127968; Work From Home Jobs (WFH)</span>
+        <span class="badge-count" id="tab-wfh-count">3</span>
+      </button>
+      <button class="tab-btn" id="btn-tab-office" onclick="switchTab('office')">
+        <span>&#127970; Nearby Office Jobs (Jaipur/NCR)</span>
+        <span class="badge-count" id="tab-office-count">3</span>
+      </button>
+      <button class="tab-btn" id="btn-tab-resume" onclick="switchTab('resume')">
+        <span>&#128196; My Profile &amp; Verified Resume</span>
+      </button>
+    </div>
+
+    <!-- Filter Controls -->
+    <div class="controls-bar" id="controls-bar">
+      <input type="text" id="search-input" class="search-input" placeholder="Search business, role, skill, or city (e.g. Jaipur, Alwar, Meta Ads)..." oninput="filterData()">
+      <select id="batch-filter" class="filter-select" onchange="filterData()">
+        <option value="all">All Hourly Batches</option>
+        <option value="09:00 AM">09:00 AM Batch</option>
+        <option value="11:00 AM">11:00 AM Batch</option>
+        <option value="01:00 PM">01:00 PM Batch</option>
+        <option value="03:00 PM">03:00 PM Batch</option>
+        <option value="05:00 PM">05:00 PM Batch</option>
+      </select>
+    </div>
+
+    <!-- Leads Container -->
+    <div id="leads-container" class="cards-grid"></div>
+
+    <!-- WFH Jobs Container -->
+    <div id="wfh-container" class="cards-grid hidden"></div>
+
+    <!-- Office Jobs Container -->
+    <div id="office-container" class="cards-grid hidden"></div>
+
+    <!-- Resume Section -->
+    <div id="resume-container" class="resume-section hidden">
+      <div class="resume-header">
+        <div>
+          <h2 style="font-size:22px; font-weight:800; color:#fff;">NILESH ACHARYA</h2>
+          <p style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">
+            Digital Marketer &bull; Phone: <strong>+91 95713 34850</strong> &bull; Email: <strong>nileshsharma3011@gmail.com</strong> &bull; Kotputli, Jaipur
+          </p>
+        </div>
+        <div>
+          <a href="data/Nilesh_Acharya_Resume.pdf" target="_blank" class="btn btn-apply">
+            &#128640; Download Verified PDF Resume
+          </a>
+        </div>
+      </div>
+
+      <div class="resume-grid">
+        <div>
+          <div class="resume-card">
+            <h3>Work Experience</h3>
+            <div class="exp-item">
+              <div class="exp-title">Digital Marketing Executive @ Leelmax Infotech</div>
+              <div class="exp-sub">Bhakrota, Jaipur &bull; 28 Jan 2025 – 27 May 2025 (4 months)</div>
+              <div class="exp-desc">
+                Managed end-to-end Ad Campaigns on Google Ads & Meta Ads. Handled client Social Media accounts (Instagram, LinkedIn). Assisted in WordPress Website Development, on-page SEO, landing page delivery, and campaign conversion optimization.
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-title">Social Media Handler @ NFPCY Real Estate</div>
+              <div class="exp-sub">Neemrana, Rajasthan &bull; 28 May 2025 – 1 July 2025 (1 month)</div>
+              <div class="exp-desc">
+                Managed company social media profiles, daily posting, property reels creation using Canva & AI tools. Engaged with prospective real-estate buyer leads via DMs to qualify budget and requirements.
+              </div>
+            </div>
+          </div>
+
+          <div class="resume-card">
+            <h3>Core Technical Skills</h3>
+            <div style="font-size:13px; color:#cbd5e1; line-height:1.6;">
+              <strong style="color:#fff;">Specializations:</strong> SEO, Social Media Marketing (SMM), Google Ads, Meta Ads (Facebook & Instagram), B2B/B2C Lead Generation Funnels, WhatsApp Chatbot Automation, Keyword Research, WordPress Web Design, Google Analytics, Local Business SEO.<br><br>
+              <strong style="color:#fff;">Tools:</strong> Canva, Filmora, Semrush, Google Ads, Ubersuggest, ChatGPT & AI Tools, Mailchimp, WordPress, Google Analytics, Meta Ads Manager, Google Keyword Planner.
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="resume-card">
+            <h3>Certifications</h3>
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <span class="cert-pill">&#9989; 9x Google Ads Certificates (Google)</span>
+              <span class="cert-pill">&#9989; SEO Certificate (Semrush Academy)</span>
+              <span class="cert-pill">&#9989; Email Marketing (HubSpot Academy)</span>
+              <span class="cert-pill">&#9989; Amazon ATES Certificate (Amazon)</span>
+              <span class="cert-pill">&#9989; 12th Pass (Ajmer Board, Rajasthan)</span>
+            </div>
+          </div>
+
+          <div class="resume-card">
+            <h3>Contact &amp; Dispatch Channels</h3>
+            <div style="font-size:13px; color:#cbd5e1; line-height:1.6;">
+              <strong>Direct Call / WhatsApp:</strong> +91 95713 34850<br>
+              <strong>Job Apply Email:</strong> nileshsharma3011@gmail.com<br>
+              <strong>Client Outreach Email:</strong> nileshsharma.digitalgrowth@gmail.com<br>
+              <strong>Hometown:</strong> Kotputli, Jaipur, Rajasthan<br>
+              <strong>Target Work Modes:</strong> Remote (WFH) &amp; Office (Jaipur, Gurugram, Delhi, Neemrana, Alwar)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast">Copied to clipboard!</div>
+
+  <!-- Raw JSON embedded safely inside application/json tags -->
+  <script id="leads-json" type="application/json">
+[
+  {
+    "id": "lead-22nov-01",
+    "business_name": "Apex Multispeciality Dental & Implant Hospital",
+    "category": "Healthcare / Dental Clinic",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "phone": "+91 98290 12345",
+    "email": "dr.sharma.apexjaipur@gmail.com",
+    "website": "Google Maps Listing Only (No direct booking portal)",
+    "reviews": "4.8★ (180+ Reviews)",
+    "audit_problem": "Google Maps par patient reviews top-tier hain, lekin direct online appointment booking portal nahi hai. Evening hours aur Sundays ko calls miss hone se high-ticket implant patients doosre clinics chale jaate hain.",
+    "solution_offered": "5-Day Dental Clinic Website + 24x7 Automated WhatsApp Appointment Bot + Local Google Maps SEO ranking boost.",
+    "batch_time": "09:00 AM",
+    "status": "High Intent",
+    "outreach_pitch": "Radhe Radhe Dr. Sahab 🙏\n\nMera naam Nilesh Acharya hai, main Jaipur se hu. Maine Google Maps par aapka clinic 'Apex Dental & Implant Hospital' dekha. Aapke 4.8★ patient reviews bohot shandaar hain.\n\n🔍 Ek Badi Growth Opportunity:\nJaipur me patients Google par best dental clinic search karte hain, lekin direct online booking website na hone se off-hours ki calls miss ho jaati hain aur patient doosre clinic switch ho jata hai.\n\n🚀 Main Aapke Liye Kya Ready Kar Sakta Hu:\n1. 5 din me clean, fast Dental Website jahan treatments aur doctor profile dekh sakein.\n2. 24x7 WhatsApp Automated Booking Bot jo patient ka appointment slot auto-confirm karega.\n3. Local SEO boost jisse high-ticket dental implant ke patients direct aapse judein.\n\n💼 Mere Baare Me:\nMain 9x Google Ads Certified Marketer hu aur healthcare lead funnels par kaam kiya hai.\n\nDr. Sahab, kya hum kal 5 minute ki quick phone call par baat kar sakte hain?\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | Digital Marketer\nKotputli, Jaipur | +91 95713 34850",
+    "wa_link": "https://wa.me/919829012345?text=Radhe%20Radhe%20Dr.%20Sahab%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai%2C%20main%20Jaipur%20se%20hu.%20Maine%20Google%20Maps%20par%20aapka%20clinic%20%27Apex%20Dental%20%26%20Implant%20Hospital%27%20dekha.%20Aapke%204.8%E2%98%85%20patient%20reviews%20bohot%20shandaar%20hain.%0A%0A%F0%9F%94%8D%20Ek%20Badi%20Growth%20Opportunity%3A%0AJaipur%20me%20patients%20Google%20par%20best%20dental%20clinic%20search%20karte%20hain%2C%20lekin%20direct%20online%20booking%20website%20na%20hone%20se%20off-hours%20ki%20calls%20miss%20ho%20jaati%20hain.%0A%0A%F0%9F%9A%80%20Main%20Aapke%20Liye%20Kya%20Ready%20Kar%20Sakta%20Hu%3A%0A1.%205%20din%20me%20clean%2C%20fast%20Dental%20Website%0A2.%2024x7%20WhatsApp%20Automated%20Booking%20Bot%0A3.%20Local%20SEO%20boost%20for%20implant%20patients%0A%0ADr.%20Sahab%2C%20kya%20hum%20kal%205%20min%20call%20par%20baat%20kar%20sakte%20hain%3F%0A%0ADhanyawad%20%26%20Radhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
+  },
+  {
+    "id": "lead-22nov-02",
+    "business_name": "Royal Residency & Industrial Plots",
+    "category": "Real Estate Developer",
+    "city": "Neemrana",
+    "state": "Rajasthan",
+    "phone": "+91 98299 88776",
+    "email": "sales@royalneemranaproperties.com",
+    "website": "Single Facebook Page (No lead qualification portal)",
+    "reviews": "4.6★ (75+ Reviews)",
+    "audit_problem": "Neemrana industrial hub (RIICO & Japanese Zone) me plots ki demand bohot tez hai, par Facebook ads se 70% junk leads aati hain jinhe manual phone call karne me sales team ka time waste hota hai.",
+    "solution_offered": "Meta Ads (Delhi NCR & Gurgaon investors) + Instant WhatsApp Qualification Bot (Auto-checks 100-200 sq. yard budget) + Automated Site Visit Booking.",
+    "batch_time": "11:00 AM",
+    "status": "High Intent",
+    "outreach_pitch": "Radhe Radhe Sir 🙏\n\nMera naam Nilesh Acharya hai. Maine Neemrana me NFPCY Real Estate ke sath property marketing aur buyer leads manage kiye hain. Maine aapka 'Royal Residency' project dekha.\n\n🔍 Neemrana Real Estate Me Badi Problem:\nJapanese zone ke paas residential plots ki demand high hai, par normal ads se aane wali junk leads me sales team ka pura din nikal jata hai.\n\n🚀 Tested Solution (Neemrana Focus):\n1. High-Quality Meta Ads (Targeting Delhi, Gurgaon & Alwar investors).\n2. Instant WhatsApp Qualification Bot jo buyer se lead aate hi 10 sec me uska Budget aur Plot Size verify karega.\n3. Verified high-intent leads direct aapke phone par calendar site-visit ke sath deliver hongi.\n\nSir, mere pas Neemrana real estate creatives aur audience data ready hai. Kya hum 5 minute baat kar sakte hain?\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | Real Estate Marketer\nKotputli / Neemrana | +91 95713 34850",
+    "wa_link": "https://wa.me/919829988776?text=Radhe%20Radhe%20Sir%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai.%20Maine%20Neemrana%20me%20NFPCY%20Real%20Estate%20ke%20sath%20property%20marketing%20handle%20ki%20hai.%20Aapka%20%27Royal%20Residency%27%20project%20dekha.%0A%0ANeemrana%20plots%20ke%20liye%20zero-junk%20lead%20generation%20aur%20WhatsApp%20buyer%20qualification%20system%20ready%20hai.%0A%0AKya%20hum%205%20min%20call%20par%20baat%20kar%20sakte%20hain%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
+  },
+  {
+    "id": "lead-22nov-03",
+    "business_name": "Aura Modular Kitchens & Luxury Interiors",
+    "category": "Interior Design / Modular Kitchen",
+    "city": "Gurugram",
+    "state": "Haryana",
+    "phone": "+91 98100 44321",
+    "email": "aurainteriors.gurugram@gmail.com",
+    "website": "Instagram Profile Only (No cost calculator)",
+    "reviews": "4.7★ (95+ Reviews)",
+    "audit_problem": "Golf Course Extension & Dwarka Expressway ke new apartments ke homeowners instant cost estimate chahte hain. Website na hone se pricing inquiry drop ho jaati hai.",
+    "solution_offered": "Instant Interior Cost Estimator Funnel + Automated WhatsApp PDF Catalog + Hyper-targeted Instagram Ads for new homeowners.",
+    "batch_time": "01:00 PM",
+    "status": "High Intent",
+    "outreach_pitch": "Radhe Radhe Sir 🙏\n\nMera naam Nilesh Acharya hai, main Performance Marketer hu. Maine Gurugram me aapka 'Aura Modular Kitchens' dekha. Aapke designs bohot premium hain.\n\n🔍 Gurugram Interior Market Opportunity:\nNew possession homeowners instant cost estimate chahte hain. Agar unhe turant estimate nahi milta, toh wo competitors par chale jaate hain.\n\n🚀 Ready Growth System:\n1. 'Get Instant 2BHK/3BHK Cost Estimate' Landing Page.\n2. WhatsApp Bot jo homeowner ko instant Portfolio PDF aur estimate bhejta hai.\n3. Hyper-targeted Meta Ads jo sirf Gurugram ke new society buyers ko dikhti hain.\n\nSir, kya hum ek short 5-minute call par preview share kar sakte hain?\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | +91 95713 34850",
+    "wa_link": "https://wa.me/919810044321?text=Radhe%20Radhe%20Sir%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai.%20Maine%20Gurugram%20me%20aapka%20%27Aura%20Modular%20Kitchens%27%20dekha.%0A%0ANew%20Gurugram%20flats%20ke%20homeowners%20ke%20liye%20Cost%20Estimator%20Funnel%20aur%20WhatsApp%20Catalog%20system%20ready%20hai.%0A%0AKya%20hum%205%20min%20call%20par%20baat%20kar%20sakte%20hain%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
+  },
+  {
+    "id": "lead-22nov-04",
+    "business_name": "Target IIT-JEE & NEET Academy",
+    "category": "Coaching Institute",
+    "city": "Alwar",
+    "state": "Rajasthan",
+    "phone": "+91 94140 11223",
+    "email": "info@targetacademyalwar.in",
+    "website": "No website (Only GMB listing)",
+    "reviews": "4.9★ (210+ Reviews)",
+    "audit_problem": "Upcoming academic session me students online admission form aur scholarship sample test dhoondhte hain, par brochure download karne ka koi automated WhatsApp funnel nahi hai.",
+    "solution_offered": "Admission Landing Page + Instant WhatsApp Syllabus & Scholarship Test Delivery Funnel + Meta Ads in Alwar, Kotputli & Behror.",
+    "batch_time": "03:00 PM",
+    "status": "High Intent",
+    "outreach_pitch": "Radhe Radhe Director Sahab 🙏\n\nMera naam Nilesh Acharya hai, main Kotputli/Alwar se hu. Maine Google par aapka 'Target Academy Alwar' dekha. 4.9★ reviews se saaf pata chalta hai ki aapke results behtareen hain.\n\n🔍 Upcoming Batch Admissions Opportunity:\nAbhi parents online syllabus aur scholarship test dekhna chahte hain. Website na hone ki wajah se direct leads capture nahi ho pa rahi hain.\n\n🚀 Hum Kya System Build Kar Sakte Hain:\n1. 1-Page High-Converting Admission & Scholarship Portal.\n2. WhatsApp Bot: Student form bharega aur 5 sec me uska Free Sample Paper WhatsApp par deliver hoga.\n3. Alwar aur nearby areas me targeted Facebook Ads jo 10th/12th parents ko reach karein.\n\nDirector Sahab, kya hum kal 5 minute phone par baat kar sakte hain?\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | +91 95713 34850",
+    "wa_link": "https://wa.me/919414011223?text=Radhe%20Radhe%20Director%20Sahab%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai%2C%20main%20Alwar%20region%20se%20hu.%20Maine%20aapka%20%27Target%20Academy%27%20dekha.%0A%0AUpcoming%20admissions%20ke%20liye%20Online%20Admission%20Funnel%20aur%20WhatsApp%20Scholarship%20Bot%20ready%20hai.%0A%0AKya%20hum%205%20min%20call%20par%20baat%20kar%20sakte%20hain%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
+  },
+  {
+    "id": "lead-22nov-05",
+    "business_name": "IronCore Elite Gym & Fitness Hub",
+    "category": "Gym & Fitness Center",
+    "city": "Jaipur (Mansarovar)",
+    "state": "Rajasthan",
+    "phone": "+91 98285 55443",
+    "email": "ironcorefitness.jaipur@gmail.com",
+    "website": "Only JustDial / Maps listing",
+    "reviews": "4.8★ (140+ Reviews)",
+    "audit_problem": "Mansarovar me gym membership demand high hai par trial pass claim karne ka koi instant WhatsApp funnel nahi hai. New gym-goers inquiry form na hone se drop ho jaate hain.",
+    "solution_offered": "Instant '1-Day Free VIP Gym Pass' WhatsApp Funnel + Local Instagram Reels Ads + Automated Membership Renewal Reminders.",
+    "batch_time": "05:00 PM",
+    "status": "High Intent",
+    "outreach_pitch": "Radhe Radhe Sir 🙏\n\nMera naam Nilesh Acharya hai, main Jaipur se hu. Maine Mansarovar me aapka 'IronCore Elite Gym' dekha. Equipments aur gym vibe bohot premium hain.\n\n🔍 Gym Membership Growth Gap:\nMansarovar aur nearby areas ke youths gym join karna chahte hain, par unhe instant 1-day free trial pass claim karne ka easy option nahi milta.\n\n🚀 Hamara Solution:\n1. 'Claim 1-Day Free VIP Pass' WhatsApp Funnel: Member sirf click karega aur pass auto-generate ho kar WhatsApp par aayega.\n2. Local Mansarovar Instagram Video Ads jo direct gym walk-ins badhayegi.\n3. Automated WhatsApp reminder bot for renewals.\n\nSir, kya hum kal 5 minute phone par baat kar sakte hain?\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | +91 95713 34850",
+    "wa_link": "https://wa.me/919828555443?text=Radhe%20Radhe%20Sir%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai%2C%20main%20Jaipur%20se%20hu.%20Aapka%20%27IronCore%20Gym%27%20dekha.%0A%0AMansarovar%20me%20Gym%20Memberships%20badhane%20ke%20liye%201-Day%20Free%20VIP%20Pass%20WhatsApp%20Funnel%20ready%20hai.%0A%0AKya%20hum%205%20min%20call%20par%20baat%20kar%20sakte%20hain%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
+  },
+  {
+    "id": "lead-22nov-06",
+    "business_name": "Sanjeevani Eye Care & Laser Centre",
+    "category": "Eye Care Hospital",
+    "city": "Kotputli",
+    "state": "Rajasthan",
+    "phone": "+91 94140 77889",
+    "email": "dr.gupta.sanjeevanieye@gmail.com",
+    "website": "Only Google Maps (No online booking)",
+    "reviews": "4.9★ (165+ Reviews)",
+    "audit_problem": "Kotputli, Behror, Paota aur Shahpura se cataract aur LASIK laser patients aate hain, par online consultation time book karne ka koi system nahi hai.",
+    "solution_offered": "Bilingual (Hindi/English) Eye Care Landing Page + WhatsApp Consultation Booking Bot + Local Google Ads.",
+    "batch_time": "07:00 PM",
+    "status": "High Intent",
+    "outreach_pitch": "Radhe Radhe Dr. Sahab 🙏\n\nMera naam Nilesh Acharya hai, main Kotputli se hi hu. Maine aapke 'Sanjeevani Eye Care Hospital' ki Google par 4.9★ reputation dekhi. Aapki patient service sach me lajawab hai.\n\n🔍 Growth Opportunity for Kotputli & Nearby Tehsils:\nBehror, Shahpura, Neemrana aur Paota ke patients cataract aur LASIK surgery ke liye search karte hain. Online appointment system na hone se unhe Jaipur ya Delhi jana padta hai.\n\n🚀 Hamara Fast Solution:\n1. Simple Hindi-English Eye Hospital Website.\n2. 24x7 WhatsApp Appointment Bot jo gaon aur shehar dono ke patients ke liye operate kare.\n3. Google Search Ads targeting nearby towns.\n\nDr. Sahab, main Kotputli me hi hu, kya main kal aapse clinic par 5 minute mil sakta hu ya phone par demo de sakta hu?\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | +91 95713 34850",
+    "wa_link": "https://wa.me/919414077889?text=Radhe%20Radhe%20Dr.%20Sahab%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai%2C%20main%20Kotputli%20se%20hu.%20Aapka%20%27Sanjeevani%20Eye%20Care%27%20dekha.%0A%0ACataract%20aur%20Eye%20care%20patients%20ke%20liye%20WhatsApp%20Booking%20System%20ready%20hai.%0A%0AKya%20hum%205%20min%20baat%20kar%20sakte%20hain%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
+  }
+]
+  </script>
+
+  <script id="jobs-json" type="application/json">
+[
+  {
+    "id": "job-22nov-wfh-01",
+    "title": "Performance Marketing Executive (Meta & Google Ads)",
+    "company": "Klimb Growth Labs India",
+    "location": "Remote (Work From Home - All India)",
+    "job_category": "WFH",
+    "type": "Full-Time (Remote WFH)",
+    "experience": "1-3 Years",
+    "salary": "₹35,000 - ₹50,000 / month",
+    "match_score": "96%",
+    "key_skills": [
+      "Meta Ads",
+      "Google Ads",
+      "Shopify CRO",
+      "Google Analytics 4",
+      "WhatsApp Automation"
+    ],
+    "hr_email": "careers@klimbgrowth.com",
+    "apply_link": "https://www.linkedin.com/jobs/search/?keywords=Performance+Marketing+Executive+Remote",
+    "batch_time": "09:00 AM",
+    "status": "Ready to Apply (Score 96%)",
+    "cover_note": "Dear Hiring Manager,\n\nI am writing to express my strong interest in the Performance Marketing Executive (Remote) position. Having managed high-ROI paid ad funnels at Leelmax Infotech (Jaipur) and NFPCY Real Estate, I bring hands-on expertise in Meta Ads Manager, Google Search/Display Ads, and conversion rate optimization.\n\nKey Highlights of My Qualifications:\n• Managed end-to-end paid ad campaigns with strict CPA and ROAS monitoring\n• 9x Google Ads Certifications, Semrush SEO, and HubSpot Inbound Certified\n• Hands-on with WordPress landing pages, GA4 tracking, and WhatsApp nurturing funnels\n• Dedicated high-speed remote home office setup with immediate joining availability\n\nMy updated resume is attached for your review. I look forward to discussing how I can scale your acquisition funnels.\n\nWarm regards,\nNilesh Acharya | +91 95713 34850 | nileshsharma3011@gmail.com"
+  },
+  {
+    "id": "job-22nov-wfh-02",
+    "title": "Digital Marketing Specialist (Lead Generation & Funnels)",
+    "company": "BrandSculpt Media",
+    "location": "Remote (Work From Home - All India)",
+    "job_category": "WFH",
+    "type": "Full-Time (Remote WFH)",
+    "experience": "1-3 Years",
+    "salary": "₹40,000 - ₹55,000 / month",
+    "match_score": "94%",
+    "key_skills": [
+      "Google Search Ads",
+      "Meta Ads",
+      "WordPress Landing Pages",
+      "Lead Gen",
+      "Canva"
+    ],
+    "hr_email": "talent@brandsculpt.in",
+    "apply_link": "https://www.naukri.com/digital-marketing-specialist-jobs-in-remote",
+    "batch_time": "11:00 AM",
+    "status": "Ready to Apply (Score 94%)",
+    "cover_note": "Dear Recruitment Team,\n\nI am excited to apply for the Digital Marketing Specialist (Remote) role. My core focus is driving qualified inbound leads and profitable customer acquisition across Google Ads and Meta platforms.\n\nWhy I am an ideal fit:\n• Proven experience at Leelmax Infotech running ad sets, A/B creative testing, and audience retargeting\n• Expertise designing fast, mobile-first WordPress landing pages that convert cold traffic\n• 9x Google Certified with analytical rigor in tracking metrics and budget efficiency\n• Available to join immediately with a seamless remote work rhythm\n\nResume attached for your review. I welcome the opportunity to discuss my contributions.\n\nSincerely,\nNilesh Acharya | +91 95713 34850 | nileshsharma3011@gmail.com"
+  },
+  {
+    "id": "job-22nov-wfh-03",
+    "title": "Paid Media Executive (E-commerce & D2C)",
+    "company": "GrowthOrbit Global",
+    "location": "Remote (Work From Home - All India)",
+    "job_category": "WFH",
+    "type": "Full-Time (Remote WFH)",
+    "experience": "0-2 Years",
+    "salary": "₹30,000 - ₹45,000 / month",
+    "match_score": "92%",
+    "key_skills": [
+      "Meta Catalog Ads",
+      "Google Shopping Ads",
+      "Social Media Creatives",
+      "Canva",
+      "SEO"
+    ],
+    "hr_email": "hiring@growthorbit.co",
+    "apply_link": "https://in.indeed.com/jobs?q=Paid+Media+Executive+Remote",
+    "batch_time": "01:00 PM",
+    "status": "Ready to Apply (Score 92%)",
+    "cover_note": "Dear Hiring Team,\n\nI am writing to apply for the Paid Media Executive role. With hands-on agency experience running Meta Ads and Google campaign structures, I am confident in driving measurable returns for your brand portfolio.\n\nQualifications Summary:\n• End-to-end campaign execution: pixel setup, custom audiences, creative optimization, and daily reporting\n• 9x Google Ads Certifications & Semrush SEO Certified\n• Strong design sense using Canva for high-CTR ad creatives and video reels\n• Immediate joining availability\n\nPlease find my resume attached. I would love to connect for a brief interview.\n\nBest regards,\nNilesh Acharya | +91 95713 34850 | nileshsharma3011@gmail.com"
+  },
+  {
+    "id": "job-22nov-office-01",
+    "title": "Digital Marketing Executive (Google & Meta Ads)",
+    "company": "ScaleApex Technologies",
+    "location": "Jaipur, Rajasthan (Nearby Office)",
+    "job_category": "Office",
+    "type": "Full-Time (Office)",
+    "experience": "0-2 Years",
+    "salary": "₹30,000 - ₹45,000 / month",
+    "match_score": "95%",
+    "key_skills": [
+      "Google Ads",
+      "Meta Ads",
+      "WordPress",
+      "SEO",
+      "Canva"
+    ],
+    "hr_email": "hr@scaleapex.in",
+    "apply_link": "https://www.linkedin.com/jobs/search/?keywords=Digital+Marketing+Executive+Jaipur",
+    "batch_time": "09:00 AM",
+    "status": "Ready to Apply (Score 95%)",
+    "cover_note": "Dear Hiring Manager,\n\nI am applying for the Digital Marketing Executive position in Jaipur. Having worked at Leelmax Infotech (Bhakrota, Jaipur), I bring hands-on experience managing Google Ads, Meta Ads campaigns, and WordPress SEO optimizations.\n\nHighlights of my qualifications:\n• Managed end-to-end client ad campaigns and social media accounts (Instagram, LinkedIn)\n• 9x Google Ads Certifications & Semrush SEO Certified\n• Based in Kotputli / Jaipur with immediate joining availability\n\nMy detailed resume is attached for your review. I look forward to contributing to your growth team.\n\nSincerely,\nNilesh Acharya | +91 95713 34850 | nileshsharma3011@gmail.com"
+  },
+  {
+    "id": "job-22nov-office-02",
+    "title": "Performance Ads Executive (PPC & Lead Generation)",
+    "company": "Aura Growth Partners",
+    "location": "Gurugram / Manesar, Haryana (Nearby Office)",
+    "job_category": "Office",
+    "type": "Full-Time (Office / Hybrid)",
+    "experience": "1-3 Years",
+    "salary": "₹35,000 - ₹50,000 / month",
+    "match_score": "93%",
+    "key_skills": [
+      "Google Search Ads",
+      "Meta Lead Ads",
+      "Landing Page CRO",
+      "Real Estate Funnels"
+    ],
+    "hr_email": "careers@auragrowth.com",
+    "apply_link": "https://www.naukri.com/performance-marketing-jobs-in-gurgaon",
+    "batch_time": "01:00 PM",
+    "status": "Ready to Apply (Score 93%)",
+    "cover_note": "Dear Recruitment Team,\n\nI am eager to apply for the Performance Ads Executive role in Gurugram / Manesar. With experience handling high-volume lead generation funnels at NFPCY Real Estate and Leelmax Infotech, I have managed paid search and social campaigns targeting Delhi NCR and Haryana markets.\n\nKey Qualifications:\n• 9x Google Ads Certifications covering Search, Display, Video, and Measurement\n• Hands-on experience optimizing ad creatives and landing page conversion funnels\n• Proximity to the Gurugram-Manesar industrial corridor with immediate joining capability\n\nMy resume is attached for your review. I look forward to an interview discussion.\n\nWarm regards,\nNilesh Acharya | +91 95713 34850 | nileshsharma3011@gmail.com"
+  },
+  {
+    "id": "job-22nov-office-03",
+    "title": "Digital Marketing & Social Media Lead",
+    "company": "Apex Industrial Solutions",
+    "location": "Neemrana / Alwar Industrial Area",
+    "job_category": "Office",
+    "type": "Full-Time (Office)",
+    "experience": "1-2 Years",
+    "salary": "₹28,000 - ₹40,000 / month",
+    "match_score": "91%",
+    "key_skills": [
+      "Social Media Marketing",
+      "Canva Graphic Design",
+      "Lead Generation",
+      "SEO"
+    ],
+    "hr_email": "hr@apexindustrial.in",
+    "apply_link": "https://in.indeed.com/jobs?q=Digital+Marketing&l=Alwar%2C+Rajasthan",
+    "batch_time": "03:00 PM",
+    "status": "Ready to Apply (Score 91%)",
+    "cover_note": "Dear Hiring Manager,\n\nI am pleased to submit my application for the Digital Marketing Lead role in the Neemrana/Alwar region. Living in Kotputli, I am locally based with zero relocation lag and immediate joining readiness.\n\nHighlights:\n• Previously handled digital promotions and social media for NFPCY Real Estate in Neemrana\n• Proficient with Canva, video reel editing, WordPress updates, and Meta ad promotions\n• 9x Google Certified Marketer committed to long-term regional brand growth\n\nResume attached. I look forward to scheduling a personal meeting.\n\nBest regards,\nNilesh Acharya | +91 95713 34850 | nileshsharma3011@gmail.com"
+  }
+]
+  </script>
+
+  <script>
+    let leadsData = [];
+    let jobsData = [];
+    let currentTab = 'leads';
+
+    try {
+      leadsData = JSON.parse(document.getElementById('leads-json').textContent.trim());
+      jobsData = JSON.parse(document.getElementById('jobs-json').textContent.trim());
+    } catch (err) {
+      console.error('Error parsing data JSON:', err);
+    }
+
+    function renderLeads(leads) {
+      const container = document.getElementById('leads-container');
+      if (!leads || leads.length === 0) {
+        container.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding: 40px; color: var(--text-muted);">No business leads match your filter.</div>`;
+        return;
+      }
+      container.innerHTML = leads.map(l => `
+        <div class="card">
+          <div>
+            <div class="card-top">
+              <div>
+                <div class="card-title">${escapeHtml(l.business_name)}</div>
+                <div class="card-meta">
+                  <span>&#128205; ${escapeHtml(l.city)}, ${escapeHtml(l.state)}</span>
+                  <span>&bull;</span>
+                  <span>${escapeHtml(l.category)}</span>
+                </div>
+              </div>
+              <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
+                <span class="tag tag-orange">${escapeHtml(l.batch_time || '09:00 AM')}</span>
+                <span class="tag ${l.status === 'Shortlisted' ? 'tag-purple' : 'tag-blue'}">${escapeHtml(l.status || 'New')}</span>
+              </div>
+            </div>
+
+            <div class="audit-box" style="margin-top: 12px;">
+              <div class="audit-problem">
+                <strong>&#9888; Review Gap / Audit:</strong> ${escapeHtml(l.reviews || '')}<br>
+                ${escapeHtml(l.audit_problem || '')}
+              </div>
+              <div class="audit-solution">
+                <strong>&#10024; Low-Cost Growth Solution:</strong> ${escapeHtml(l.solution_offered || '')}
+              </div>
+            </div>
+          </div>
+
+          <div class="pitch-box">
+            <div class="pitch-head">
+              <span>&#128172; Radhe Radhe WhatsApp Pitch</span>
+              <span class="btn-copy-action" onclick="copyLeadPitch('${escapeQuotes(l.outreach_pitch)}')">&#128203; Copy</span>
+            </div>
+            <div class="pitch-text">${escapeHtml(l.outreach_pitch)}</div>
+          </div>
+
+          <div class="card-btns">
+            <a href="${l.wa_link || '#'}" target="_blank" class="btn btn-wa">
+              &#128172; 1-Click WhatsApp
+            </a>
+            <a href="tel:${escapeHtml(l.phone || '').replace(/[^0-9]/g, '')}" class="btn btn-call" title="Call Business Directly">
+              &#128222; Call Owner
+            </a>
+            <button class="btn btn-outline" onclick="copyLeadPitch('${escapeQuotes(l.outreach_pitch)}')" title="Copy pitch text">
+              &#128203; Copy Pitch
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderJobCards(containerId, jobList) {
+      const container = document.getElementById(containerId);
+      if (!jobList || jobList.length === 0) {
+        container.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding: 40px; color: var(--text-muted);">No matching job postings found.</div>`;
+        return;
+      }
+      container.innerHTML = jobList.map(j => `
+        <div class="card">
+          <div>
+            <div class="card-top">
+              <div>
+                <div class="card-title">${escapeHtml(j.title)}</div>
+                <div class="card-meta">
+                  <span>&#127970; ${escapeHtml(j.company)}</span>
+                  <span>&bull;</span>
+                  <span>&#128205; ${escapeHtml(j.location)}</span>
+                </div>
+              </div>
+              <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
+                <span class="tag tag-orange">${escapeHtml(j.batch_time || '09:00 AM')}</span>
+                <span class="tag tag-green">${escapeHtml(j.match_score || '90%')}</span>
+              </div>
+            </div>
+
+            <div style="display:flex; flex-wrap:wrap; gap:6px; margin: 10px 0;">
+              <span class="tag tag-blue">${escapeHtml(j.salary || '')}</span>
+              <span class="tag tag-purple">&#9201; ${escapeHtml(j.experience || '1-3 Yrs')}</span>
+              <span class="tag tag-green">${escapeHtml(j.type || 'Full-Time')}</span>
+            </div>
+
+            <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top: 6px;">
+              ${(j.key_skills || []).map(s => `<span style="font-size:11px; background:#1e293b; color:#cbd5e1; padding:2px 7px; border-radius:5px; border:1px solid #334155;">${escapeHtml(s)}</span>`).join('')}
+            </div>
+          </div>
+
+          <div class="pitch-box">
+            <div class="pitch-head">
+              <span>Recruiter Cover Note (Resume Attached)</span>
+              <span class="btn-copy-action" onclick="copyLeadPitch('${escapeQuotes(j.cover_note)}')">&#128203; Copy</span>
+            </div>
+            <div class="pitch-text">${escapeHtml(j.cover_note)}</div>
+          </div>
+
+          <div class="card-btns">
+            <a href="${j.apply_link || '#'}" target="_blank" class="btn btn-apply">
+              &#128640; Direct 1-Click Apply
+            </a>
+            <button class="btn btn-outline" onclick="copyLeadPitch('${escapeQuotes(j.cover_note)}')">
+              &#128203; Copy Cover Note
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function switchTab(tab) {
+      currentTab = tab;
+      document.getElementById('btn-tab-leads').classList.toggle('active', tab === 'leads');
+      document.getElementById('btn-tab-wfh').classList.toggle('active', tab === 'wfh');
+      document.getElementById('btn-tab-office').classList.toggle('active', tab === 'office');
+      document.getElementById('btn-tab-resume').classList.toggle('active', tab === 'resume');
+
+      document.getElementById('leads-container').classList.toggle('hidden', tab !== 'leads');
+      document.getElementById('wfh-container').classList.toggle('hidden', tab !== 'wfh');
+      document.getElementById('office-container').classList.toggle('hidden', tab !== 'office');
+      document.getElementById('resume-container').classList.toggle('hidden', tab !== 'resume');
+      document.getElementById('controls-bar').classList.toggle('hidden', tab === 'resume');
+
+      if (tab !== 'resume') {
+        filterData();
+      }
+    }
+
+    function filterData() {
+      const q = (document.getElementById('search-input').value || '').toLowerCase().trim();
+      const batch = document.getElementById('batch-filter').value;
+
+      if (currentTab === 'leads') {
+        const filtered = leadsData.filter(l => {
+          const matchQ = !q || (l.business_name || '').toLowerCase().includes(q) ||
+            (l.city || '').toLowerCase().includes(q) ||
+            (l.category || '').toLowerCase().includes(q);
+
+          const matchB = batch === 'all' || (l.batch_time || '').includes(batch);
+          return matchQ && matchB;
+        });
+        renderLeads(filtered);
+      } else if (currentTab === 'wfh') {
+        const wfhJobs = jobsData.filter(j => j.job_category === 'WFH' || (j.location || '').includes('Remote'));
+        const filtered = wfhJobs.filter(j => {
+          const matchQ = !q || (j.title || '').toLowerCase().includes(q) ||
+            (j.company || '').toLowerCase().includes(q) ||
+            (j.key_skills || []).some(k => k.toLowerCase().includes(q));
+
+          const matchB = batch === 'all' || (j.batch_time || '').includes(batch);
+          return matchQ && matchB;
+        });
+        renderJobCards('wfh-container', filtered);
+      } else if (currentTab === 'office') {
+        const officeJobs = jobsData.filter(j => j.job_category === 'Office' || !(j.location || '').includes('Remote'));
+        const filtered = officeJobs.filter(j => {
+          const matchQ = !q || (j.title || '').toLowerCase().includes(q) ||
+            (j.company || '').toLowerCase().includes(q) ||
+            (j.location || '').toLowerCase().includes(q) ||
+            (j.key_skills || []).some(k => k.toLowerCase().includes(q));
+
+          const matchB = batch === 'all' || (j.batch_time || '').includes(batch);
+          return matchQ && matchB;
+        });
+        renderJobCards('office-container', filtered);
+      }
+    }
+
+    function escapeQuotes(str) {
+      if (!str) return '';
+      return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;').replace(/\n/g, '\\n');
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function copyLeadPitch(text) {
+      const formatted = text.replace(/\\n/g, '\n');
+      navigator.clipboard.writeText(formatted).then(() => {
+        showToast('Copied to clipboard!');
+      }).catch(() => {
+        showToast('Copied!');
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 2200);
+    }
+
+    // Initial render
+    renderLeads(leadsData);
+    renderJobCards('wfh-container', jobsData.filter(j => j.job_category === 'WFH' || (j.location || '').includes('Remote')));
+    renderJobCards('office-container', jobsData.filter(j => j.job_category === 'Office' || !(j.location || '').includes('Remote')));
+  </script>
+</body>
+</html>
