@@ -1,7 +1,8 @@
 {
   "sent_clients": [
     "dr.sharma.apexjaipur@gmail.com",
-    "info@youdent.in"
+    "info@youdent.in",
+    "jaijinendradental@gmail.com"
   ],
   "history": [
     {
@@ -29,24 +30,47 @@
       "type": "client",
       "recipient": "info@youdent.in",
       "business": "YouDent Hospital (NABH Dental & Implants)"
+    },
+    {
+      "timestamp": "2026-11-23T16:59:01.354962",
+      "type": "job_application",
+      "recipient": "careers@girnarsoft.com",
+      "company": "CarDekho / GirnarSoft",
+      "title": "Digital Growth & SEO Specialist"
+    },
+    {
+      "timestamp": "2026-11-23T16:59:01.354962",
+      "type": "client",
+      "recipient": "jaijinendradental@gmail.com",
+      "business": "Jai Jinendra Dental Hospital"
     }
   ],
   "sent_jobs": [
     "hr@techtail.in",
-    "hiring@prohed.com"
+    "hiring@prohed.com",
+    "careers@girnarsoft.com"
   ],
   "notified_telegram": [
-    "lead-goldsgym-jaipur",
-    "lead-anytimefitness-jaipur",
-    "lead-jaijinendra-jaipur",
-    "job-23nov-wfh-01",
-    "job-office-gurugram-01",
-    "lead-sanjeevani-alwar",
-    "job-wfh-01",
     "job-23nov-office-02",
-    "lead-youdent-jaipur",
-    "job-23nov-office-01",
+    "job-wfh-02",
     "lead-skyearth-neemrana",
-    "job-office-jaipur-01"
+    "job-23nov-wfh-01",
+    "job-office-jaipur-01",
+    "job-23nov-office-01",
+    "lead-rathoreclasses-jaipur",
+    "lead-sanjeevani-alwar",
+    "lead-jaijinendra-jaipur",
+    "lead-anytimefitness-jaipur",
+    "job-wfh-01",
+    "lead-youdent-jaipur",
+    "job-office-jaipur-02",
+    "job-office-gurugram-01",
+    "lead-blallab-jaipur",
+    "lead-goldsgym-jaipur"
+  ],
+  "replied_contacts": [
+    "no-reply@accounts.google.com",
+    "mailer-daemon@googlemail.com",
+    "no-reply@google.com"
   ]
 }
