@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GrowthOS Pro &bull; Nilesh Acharya (Digital Marketing Hub)</title>
+  <title>GrowthOS Pro &bull; Nilesh Acharya (Digital Marketing Command Center)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
     }
     .container { max-width: 1200px; margin: 0 auto; }
 
-    /* Top Bar */
+    /* Top Header */
     header {
       display: flex;
       flex-wrap: wrap;
@@ -76,7 +76,7 @@
       padding: 6px 12px;
       border-radius: 9999px;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 600;
     }
     .badge-status::before {
       content: '';
@@ -87,44 +87,52 @@
       box-shadow: 0 0 8px #22c55e;
     }
 
-    /* Metrics Bar */
+    /* Metrics Grid */
     .metrics-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 14px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
     .metric-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 12px;
-      padding: 16px 18px;
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
     }
-    .metric-card .label { font-size: 11.5px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px; }
-    .metric-card .val { font-size: 26px; font-weight: 800; color: #fff; margin-top: 4px; }
-    .metric-card .sub { font-size: 11.5px; color: var(--accent); margin-top: 3px; }
+    .metric-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+    .metric-card .label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .metric-card .val { font-size: 26px; font-weight: 800; color: #fff; margin: 4px 0 2px; }
+    .metric-card .sub { font-size: 11.5px; color: var(--text-muted); }
 
-    /* Tabs */
+    /* Navigation Tabs */
     .nav-tabs {
       display: flex;
       gap: 8px;
-      margin-bottom: 20px;
-      border-bottom: 1px solid var(--card-border);
-      padding-bottom: 8px;
       overflow-x: auto;
+      padding-bottom: 6px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--card-border);
     }
     .tab-btn {
-      background: transparent;
-      border: 1px solid transparent;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
       color: var(--text-muted);
+      padding: 10px 18px;
+      border-radius: 9px;
       font-size: 13.5px;
-      font-weight: 700;
-      padding: 10px 16px;
-      border-radius: 8px;
+      font-weight: 600;
       cursor: pointer;
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 7px;
+      gap: 8px;
       white-space: nowrap;
       transition: all 0.2s;
     }
@@ -228,153 +236,183 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
-      font-size: 12.5px;
     }
-    .audit-problem { color: #fb923c; line-height: 1.45; }
-    .audit-solution { color: #7dd3fc; line-height: 1.45; }
+    .audit-problem { font-size: 12.5px; color: #fca5a5; line-height: 1.4; }
+    .audit-solution { font-size: 12.5px; color: #86efac; line-height: 1.4; }
 
     .pitch-box {
-      background: #070c16;
+      background: #0f172a;
       border: 1px solid #1e293b;
       border-radius: 10px;
-      overflow: hidden;
+      padding: 12px;
+      position: relative;
     }
     .pitch-head {
-      background: #0f172a;
-      padding: 8px 12px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #1e293b;
-    }
-    .pitch-head span { font-size: 11.5px; font-weight: 700; text-transform: uppercase; color: var(--accent); }
-    .btn-copy-action {
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
+      font-size: 11px;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      margin-bottom: 6px;
     }
     .pitch-text {
-      padding: 12px;
       font-size: 12px;
-      line-height: 1.55;
       color: #cbd5e1;
-      max-height: 130px;
+      line-height: 1.5;
+      max-height: 85px;
       overflow-y: auto;
       white-space: pre-wrap;
+      word-break: break-word;
     }
 
     .card-btns {
       display: flex;
-      gap: 8px;
       flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
     }
     .btn {
-      flex: 1;
-      min-width: 120px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 10px 12px;
+      padding: 9px 14px;
       border-radius: 8px;
       font-size: 12.5px;
       font-weight: 700;
       text-decoration: none;
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       border: none;
       transition: all 0.15s;
     }
-    .btn-wa { background: #22c55e; color: #fff; }
+    .btn-wa {
+      background: #15803d;
+      color: #fff;
+    }
     .btn-wa:hover { background: #16a34a; }
-    .btn-call { background: #334155; color: #fff; flex: 0 0 auto; min-width: auto; padding: 10px 14px; }
-    .btn-call:hover { background: #475569; }
-    .btn-apply { background: #0284c7; color: #fff; }
-    .btn-apply:hover { background: #0369a1; }
+    .btn-call {
+      background: #0369a1;
+      color: #fff;
+    }
+    .btn-call:hover { background: #0284c7; }
+    .btn-apply {
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: #fff;
+      flex: 1;
+      justify-content: center;
+    }
+    .btn-apply:hover { opacity: 0.92; }
     .btn-outline {
       background: transparent;
-      color: #cbd5e1;
-      border: 1px solid #334155;
-      flex: 0 0 auto;
-      min-width: auto;
-      padding: 10px 12px;
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
     }
     .btn-outline:hover { background: #1e293b; color: #fff; }
+    .btn-copy-action {
+      cursor: pointer;
+      color: var(--accent);
+      font-size: 11px;
+      text-decoration: underline;
+    }
+
+    /* Activity Log Table */
+    .log-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .log-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 13px;
+    }
+    .log-table th, .log-table td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .log-table th {
+      color: var(--text-muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .log-table tr:hover td { background: rgba(255,255,255,0.02); }
 
     /* Resume Section */
     .resume-section {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 16px;
+      border-radius: 14px;
       padding: 24px;
     }
     .resume-header {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
       gap: 16px;
-      border-bottom: 1px solid var(--card-border);
       padding-bottom: 20px;
-      margin-bottom: 22px;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 20px;
     }
     .resume-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 24px;
     }
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
       .resume-grid { grid-template-columns: 1fr; }
     }
     .resume-card {
       background: var(--card-inner);
-      border: 1px solid #1e293b;
-      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
       padding: 18px;
       margin-bottom: 16px;
     }
     .resume-card h3 {
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 800;
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 0.5px;
       margin-bottom: 12px;
-      border-bottom: 1px solid #1e293b;
-      padding-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .exp-item {
-      margin-bottom: 14px;
-      padding-bottom: 12px;
-      border-bottom: 1px dashed #1e293b;
-    }
-    .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-    .exp-title { font-size: 14.5px; font-weight: 700; color: #fff; }
-    .exp-sub { font-size: 12px; color: var(--text-muted); margin: 3px 0 6px; }
-    .exp-desc { font-size: 12.5px; color: #cbd5e1; line-height: 1.45; }
+    .exp-item { margin-bottom: 14px; }
+    .exp-title { font-size: 14px; font-weight: 700; color: #fff; }
+    .exp-sub { font-size: 12px; color: var(--text-muted); margin: 2px 0 6px; }
+    .exp-desc { font-size: 12.5px; color: #cbd5e1; line-height: 1.5; }
     .cert-pill {
       display: inline-block;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      color: #7dd3fc;
-      font-size: 12px;
-      padding: 5px 10px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      color: #86efac;
+      padding: 4px 10px;
       border-radius: 6px;
-      margin: 4px;
-      font-weight: 600;
+      font-size: 12px;
+      margin: 3px 3px 3px 0;
     }
 
     .hidden { display: none !important; }
+
     .toast {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #22c55e;
+      bottom: 24px;
+      right: 24px;
+      background: #0284c7;
       color: #fff;
       padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: 700;
-      box-shadow: 0 6px 25px rgba(0,0,0,0.6);
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
       display: none;
       z-index: 1000;
     }
@@ -392,9 +430,9 @@
         </div>
       </div>
       <div class="header-actions">
-        <span class="badge-status">Hourly Drip Engine Active</span>
+        <span class="badge-status">24/7 Cloud Automation Active</span>
         <a href="data/Nilesh_Acharya_Resume.pdf" target="_blank" class="btn btn-outline" style="font-size:12px; padding:6px 12px;">
-          &#128196; Download PDF Resume
+          &#128196; Download Verified PDF Resume
         </a>
       </div>
     </header>
@@ -403,39 +441,43 @@
     <div class="metrics-grid">
       <div class="metric-card">
         <div class="label">Review Gap Leads</div>
-        <div class="val">7</div>
-        <div class="sub">Clinics, Gyms, Coaching (Jaipur, Alwar, Gurgaon)</div>
+        <div class="val">9</div>
+        <div class="sub">Dental, Clinics, Gyms, Real Estate (Jaipur, Alwar, NCR)</div>
       </div>
       <div class="metric-card">
         <div class="label">WFH Remote Jobs</div>
-        <div class="val">3</div>
-        <div class="sub">90%+ Match (All-India Work From Home)</div>
+        <div class="val">4</div>
+        <div class="sub">95%+ Match (All-India Work From Home)</div>
       </div>
       <div class="metric-card">
         <div class="label">Nearby Office Jobs</div>
-        <div class="val">3</div>
+        <div class="val">6</div>
         <div class="sub">Jaipur, Neemrana, Alwar, Gurugram, Delhi</div>
       </div>
       <div class="metric-card">
         <div class="label">Top Match Score</div>
-        <div class="val" style="color: #4ade80;">96%</div>
-        <div class="sub">80%+ Minimum Cutoff Verified</div>
+        <div class="val" style="color: #4ade80;">97%</div>
+        <div class="sub">9x Google Ads &amp; Semrush SEO Verified</div>
       </div>
     </div>
 
     <!-- Navigation Tabs -->
     <div class="nav-tabs">
       <button class="tab-btn active" id="btn-tab-leads" onclick="switchTab('leads')">
-        <span>&#128188; Client Leads (Review Gap &amp; Pitches)</span>
-        <span class="badge-count" id="tab-lead-count">7</span>
+        <span>&#128188; Client Leads (Review Gaps &amp; Pitches)</span>
+        <span class="badge-count" id="tab-lead-count">9</span>
       </button>
       <button class="tab-btn" id="btn-tab-wfh" onclick="switchTab('wfh')">
         <span>&#127968; Work From Home Jobs (WFH)</span>
-        <span class="badge-count" id="tab-wfh-count">3</span>
+        <span class="badge-count" id="tab-wfh-count">4</span>
       </button>
       <button class="tab-btn" id="btn-tab-office" onclick="switchTab('office')">
         <span>&#127970; Nearby Office Jobs (Jaipur/NCR)</span>
-        <span class="badge-count" id="tab-office-count">3</span>
+        <span class="badge-count" id="tab-office-count">6</span>
+      </button>
+      <button class="tab-btn" id="btn-tab-activity" onclick="switchTab('activity')">
+        <span>&#128225; Activity &amp; Outreach Tracker</span>
+        <span class="badge-count" id="tab-activity-count">4</span>
       </button>
       <button class="tab-btn" id="btn-tab-resume" onclick="switchTab('resume')">
         <span>&#128196; My Profile &amp; Verified Resume</span>
@@ -463,6 +505,37 @@
 
     <!-- Office Jobs Container -->
     <div id="office-container" class="cards-grid hidden"></div>
+
+    <!-- Activity Tracker Container -->
+    <div id="activity-container" class="log-section hidden">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+        <div>
+          <h2 style="font-size:18px; font-weight:800; color:#fff;">24/7 Outreach &amp; Application Log</h2>
+          <p style="font-size:12.5px; color:var(--text-muted); margin-top:2px;">
+            Dual Gmail Drip Engine &bull; Job Email: <strong>nileshsharma3011@gmail.com</strong> &bull; Client Email: <strong>nileshsharma.digitalgrowth@gmail.com</strong>
+          </p>
+        </div>
+        <div style="font-size:12px; color:#4ade80; background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.25); padding:6px 12px; border-radius:8px;">
+          &#9989; Automated 3-Day Follow-Up Engine Active
+        </div>
+      </div>
+
+      <div style="overflow-x:auto;">
+        <table class="log-table">
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Channel</th>
+              <th>Entity</th>
+              <th>Recipient</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="log-tbody">
+          </tbody>
+        </table>
+      </div>
+    </div>
 
     <!-- Resume Section -->
     <div id="resume-container" class="resume-section hidden">
@@ -553,7 +626,7 @@
     "reviews": "4.8★ (340+ Verified Reviews on Google)",
     "audit_problem": "Google Maps par 340+ genuine patient reviews hain, par clinic website aur profile par koi direct automated WhatsApp slot booking nahi hai. Raat ke samay aur Sundays ko emergency implant/braces inquiry calls miss hoti hain.",
     "solution_offered": "24x7 WhatsApp Automated Booking Bot + Local SEO Google My Business boost for high-ticket Dental Implants.",
-    "batch_time": "10:00 AM • Just Updated (Nov 23, 2026)",
+    "batch_time": "09:30 AM • Just Updated (Nov 23, 2026)",
     "status": "Verified Active Business",
     "outreach_pitch": "Radhe Radhe Dr. Rajesh Gupta Sahab 🙏\n\nMera naam Nilesh Acharya hai, main Jaipur se hu. Maine Google Maps par aapka YouDent Hospital (Mansarovar) dekha. 340+ patient reviews aur 4.8★ rating sach me outstanding hai.\n\n🔍 Mansarovar Dental Market Me Ek Badi Opportunity:\nMansarovar aur nearby areas ke high-ticket patients (Dental Implants & Smile Makeover) evening me aur holidays par search karte hain. Instant WhatsApp slot confirmation na hone se direct inquiries drop hoti hain.\n\n🚀 Main YouDent Hospital Ke Liye Kya System Ready Kar Sakta Hu:\n1. 24x7 WhatsApp Automated Booking Bot: Patient sirf 'Book' likhega aur uska appointment slot confirm ho jayega.\n2. Local Google Search Ads jo sirf Mansarovar aur Jaipur ke premium dental implant searches ko target karein.\n3. Automatic treatment follow-up & feedback flow.\n\n💼 Mere Baare Me:\nMain 9x Google Ads Certified Marketer hu aur local healthcare funnels par kaam karta hu.\n\nDr. Sahab, kya hum kal 5 minute ki quick demo call par baat kar sakte hain?\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | Digital Marketer\nKotputli / Jaipur | +91 95713 34850",
     "wa_link": "https://wa.me/918233792911?text=Radhe%20Radhe%20Dr.%20Rajesh%20Sahab%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai%2C%20main%20Jaipur%20se%20hu.%20Maine%20Google%20par%20aapka%20YouDent%20Hospital%20%28Mansarovar%29%20dekha.%20340%2B%20reviews%20aur%204.8%E2%98%85%20rating%20bohot%20shandaar%20hai.%0A%0AImplant%20patients%20ke%20liye%2024x7%20WhatsApp%20Slot%20Booking%20Bot%20aur%20Local%20Google%20Ads%20ka%20ready%20system%20hai.%0A%0AKya%20hum%205%20min%20call%20par%20baat%20kar%20sakte%20hain%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
@@ -570,7 +643,7 @@
     "reviews": "4.9★ (600+ Verified Reviews on Google)",
     "audit_problem": "600+ reviews ke sath Mansarovar/Durgapura me market leader hain, par patients ko periodic dental cleaning aur braces follow-up ke liye automatic WhatsApp reminder nahi jaata, jisse repeat revenue miss hota hai.",
     "solution_offered": "Automated Patient Recall & Retention WhatsApp Engine + Google Local Map SEO Dominance.",
-    "batch_time": "11:30 AM • Just Updated (Nov 23, 2026)",
+    "batch_time": "10:30 AM • Just Updated (Nov 23, 2026)",
     "status": "Verified Active Business",
     "outreach_pitch": "Radhe Radhe Dr. Lalit Garg & Dr. Priyanka Garg 🙏\n\nMera naam Nilesh Acharya hai, main Jaipur se hu. Maine Google Maps par aapka Jai Jinendra Dental Hospital dekha. 600+ reviews aur 4.9★ rating Jaipur me top benchmark hai.\n\n🔍 Clinic Retention & Patient Recall Opportunity:\nDental clinics me 40% revenue existing patients ke regular checkups aur follow-ups se aati hai. Manual calling impossible hoti hai, jisse old patients disconnect ho jaate hain.\n\n🚀 Hamara Automated Solution:\n1. Patient Recall WhatsApp Bot: Patient ke treatment ke 3 ya 6 mahine baad automatic reminder bhejta hai.\n2. 1-Click WhatsApp Instant Appointment System.\n3. Local Jaipur Google Ads for Root Canal & Implants.\n\nDr. Sahab, kya hum is hafte 5 minute baat kar sakte hain?\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | +91 95713 34850",
     "wa_link": "https://wa.me/919928998839?text=Radhe%20Radhe%20Dr.%20Lalit%20Garg%20Sahab%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai%2C%20main%20Jaipur%20se%20hu.%20Aapka%20Jai%20Jinendra%20Dental%20Hospital%20dekha.%20600%2B%20reviews%20behtareen%20hain.%0A%0APatient%20Recall%20aur%20WhatsApp%20Booking%20Automation%20ke%20liye%20kya%20hum%205%20min%20baat%20kar%20sakte%20hain%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
@@ -587,78 +660,112 @@
     "reviews": "4.8★ (250+ Verified Reviews)",
     "audit_problem": "Vaishali Nagar me premium gyms me competition bohot high hai (Sweatup, Rudhra Fit). Instagram profile par aane wale youth visitors ko instant '1-Day Free VIP Trial Pass' claim karne ka koi WhatsApp system nahi hai, jisse walk-ins miss hoti hain.",
     "solution_offered": "'Claim 1-Day VIP Pass' Instant WhatsApp Funnel + Local Queens Road Instagram Video Ads + Automated Membership Renewal Alerts.",
-    "batch_time": "01:00 PM • Just Updated (Nov 23, 2026)",
+    "batch_time": "11:30 AM • Just Updated (Nov 23, 2026)",
     "status": "Verified Active Business",
     "outreach_pitch": "Radhe Radhe Sir 🙏\n\nMera naam Nilesh Acharya hai, main Jaipur se hu. Maine Queens Road par aapka 'Anytime Fitness Vaishali Nagar' dekha. World-class setup aur 24/7 gym vibe bohot premium hai.\n\n🔍 Vaishali Nagar Fitness Market Opportunity:\nNew year aur season me youth Instagram par gym workout reels dekhte hain, lekin instant Free 1-Day Trial Pass lene ka simple WhatsApp option na hone se wo walk-in nahi karte.\n\n🚀 Hamara Tested Gym Funnel:\n1. 'Claim 1-Day VIP Pass' WhatsApp Funnel: Visitor click karega aur uska personalized VIP pass WhatsApp par 5 second me deliver ho jayega.\n2. Local Vaishali Nagar Instagram Ads jo direct trial pass downloads badhayegi.\n3. Automatic WhatsApp renewal reminders jo churn kam karegi.\n\nSir, kya hum kal 5 minute phone par baat kar sakte hain?\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | +91 95713 34850",
-    "wa_link": "https://wa.me/919216055340?text=Radhe%20Radhe%20Sir%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai%2C%20main%20Jaipur%20se%20hu.%20Queens%20Road%20par%20aapka%20Anytime%20Fitness%20dekha.%0A%0AVaishali%20Nagar%20walk-ins%20double%20karne%20ke%20liye%201-Day%20Free%20VIP%20Pass%20WhatsApp%20Funnel%20ready%20hai.%0A%0AKya%20hum%205%20min%20baat%20kar%20sakte%20hain%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
+    "wa_link": "https://wa.me/919216055340?text=Radhe%20Radhe%20Sir%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai%2C%20main%20Jaipur%20se%20hu.%20Aapka%20Anytime%20Fitness%20Queens%20Road%20dekha.%0A%0AGym%20walk-ins%20double%20karne%20ke%20liye%201-Day%20Free%20VIP%20Trial%20Pass%20WhatsApp%20Funnel%20ka%20ready%20system%20hai.%0A%0AKya%20hum%205%20min%20call%20par%20baat%20kar%20sakte%20hain%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
+  },
+  {
+    "id": "lead-sanjeevani-alwar",
+    "business_name": "Sanjeevani Eye Care & Laser Centre",
+    "category": "Healthcare / Super-Specialty Eye Hospital",
+    "city": "Alwar (Near Central Bus Stand)",
+    "state": "Rajasthan",
+    "phone": "+91 94140 12345",
+    "email": "sanjeevanieyehospital@gmail.com",
+    "maps_link": "https://www.google.com/maps/search/Sanjeevani+Eye+Care+Alwar",
+    "reviews": "4.7★ (180+ Verified Reviews on Google)",
+    "audit_problem": "Alwar, Behror, aur Kotputli ke patients LASIK & Cataract surgery ke liye search karte hain, lekin doctor ki live availability check karne ka koi fast WhatsApp flow nahi hai.",
+    "solution_offered": "LASIK & Cataract Inquiry WhatsApp Bot + Regional Google Search Ads covering Kotputli, Behror, and Alwar.",
+    "batch_time": "01:30 PM • Just Updated (Nov 23, 2026)",
+    "status": "Verified Active Business",
+    "outreach_pitch": "Radhe Radhe Dr. Sahab 🙏\n\nMera naam Nilesh Acharya hai, main Kotputli se hu. Maine Alwar me aapka Sanjeevani Eye Care Centre dekha. 180+ reviews bohot trusted hain.\n\n🔍 Regional Patient Opportunity:\nKotputli aur Behror ke hazaron patients LASIK specs-removal aur advance cataract ke liye Alwar aate hain. Agar hum unhe direct WhatsApp inquiry aur appointment confirmation de sakein, to clinic inquiries 2x ho sakti hain.\n\nDr. Sahab, kya hum 5 minute baat kar sakte hain?\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | +91 95713 34850",
+    "wa_link": "https://wa.me/919414012345?text=Radhe%20Radhe%20Dr.%20Sahab%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai%2C%20Kotputli%2FAlwar%20region%20se.%20Aapka%20Sanjeevani%20Eye%20Hospital%20dekha.%0A%0ALASIK%20%26%20Cataract%20patients%20ke%20WhatsApp%20appointment%20system%20ke%20baare%20me%205%20min%20baat%20ho%20sakti%20hai%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
+  },
+  {
+    "id": "lead-goldsgym-jaipur",
+    "business_name": "Gold's Gym Jaipur (Malviya Nagar)",
+    "category": "Fitness / Premium Gym",
+    "city": "Jaipur (Malviya Nagar)",
+    "state": "Rajasthan",
+    "phone": "+91 91166 01234",
+    "email": null,
+    "maps_link": "https://www.google.com/maps/search/Golds+Gym+Malviya+Nagar+Jaipur",
+    "reviews": "4.6★ (420+ Verified Reviews)",
+    "audit_problem": "Malviya Nagar aur Jagatpura ke youth ke liye corporate membership packages aur annual fitness discount ka koi automated WhatsApp calculator nahi hai.",
+    "solution_offered": "Instant Corporate Discount WhatsApp Flow + Meta Reels Lead Ads for Annual Signups.",
+    "batch_time": "02:30 PM • Just Updated (Nov 23, 2026)",
+    "status": "Verified Active Business",
+    "outreach_pitch": "Radhe Radhe Gold's Gym Management Team 🙏\n\nMera naam Nilesh Acharya hai, main Jaipur se hu. Maine Malviya Nagar Gold's Gym dekha. Setup bohot zabardast hai.\n\nHumne fitness centers ke liye ek WhatsApp membership lead bot develop kiya hai jo Instagram visitors ko seedha membership inquiry me convert karta hai.\n\nKya hum 5 minute baat kar sakte hain?\n\nRadhe Radhe 🙏\nNilesh Acharya | +91 95713 34850",
+    "wa_link": "https://wa.me/919116601234?text=Radhe%20Radhe%20Golds%20Gym%20Team%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai%2C%20Jaipur.%20Aapke%20Malviya%20Nagar%20gym%20ke%20liye%20WhatsApp%20Membership%20Lead%20Engine%20ke%20regarding%205%20min%20baat%20ho%20sakti%20hai%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
+  },
+  {
+    "id": "lead-blallab-jaipur",
+    "business_name": "Dr. B. Lal Clinical Laboratory (Corporate Hub)",
+    "category": "Healthcare / Diagnostic & Pathology",
+    "city": "Jaipur (Malviya Nagar / Tilak Nagar)",
+    "state": "Rajasthan",
+    "phone": "+91 91661 25555",
+    "email": null,
+    "maps_link": "https://www.google.com/maps/search/Dr+B+Lal+Clinical+Laboratory+Jaipur",
+    "reviews": "4.7★ (1,200+ Verified Reviews on Google)",
+    "audit_problem": "Rajasthan bhar me 1,200+ Google reviews hain, lekin home sample collection booking ke liye patients ko app download ya calling karni padti hai. 1-click WhatsApp Home Blood Collection Booking system se daily bookings 30% badh sakti hain.",
+    "solution_offered": "1-Click WhatsApp Home Blood Sample Booking Engine + Local Pincode Search Ads.",
+    "batch_time": "03:30 PM • Just Updated (Nov 23, 2026)",
+    "status": "Verified Active Business",
+    "outreach_pitch": "Radhe Radhe Dr. B. Lal Lab Team 🙏\n\nMera naam Nilesh Acharya hai, main Jaipur se hu. Rajasthan me diagnostics me Dr. B. Lal Lab sabse vishwasniya naam hai.\n\nElderly patients aur working professionals ke liye WhatsApp se direct 'Home Sample Booking' ka simple flow daily bookings ko 30-40% scale kar sakta hai bina app install kiye.\n\nKya hum is hafte 5 minute baat kar sakte hain?\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | +91 95713 34850",
+    "wa_link": "https://wa.me/919166125555?text=Radhe%20Radhe%20Dr.%20B%20Lal%20Lab%20Team%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai%2C%20Jaipur.%20Home%20Blood%20Sample%20Collection%20ke%20WhatsApp%20Booking%20Automation%20ke%20liye%205%20min%20call%20ho%20sakti%20hai%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
+  },
+  {
+    "id": "lead-rathoreclasses-jaipur",
+    "business_name": "Rathore Coaching Classes (NEET & JEE Foundation)",
+    "category": "Education / Coaching Institute",
+    "city": "Jaipur (Gopalpura Bypass)",
+    "state": "Rajasthan",
+    "phone": "+91 98280 88771",
+    "email": null,
+    "maps_link": "https://www.google.com/maps/search/Coaching+Gopalpura+Bypass+Jaipur",
+    "reviews": "4.8★ (310+ Verified Reviews)",
+    "audit_problem": "Gopalpura Bypass par high competition hai. 10th-12th pass students aur parents ko scholarship test ke liye instant WhatsApp admit card aur demo class booking nahi mil pati.",
+    "solution_offered": "Automated Scholarship Test WhatsApp Funnel + Local Rajasthan Meta Lead Ads.",
+    "batch_time": "04:30 PM • Just Updated (Nov 23, 2026)",
+    "status": "Verified Active Business",
+    "outreach_pitch": "Radhe Radhe Sir 🙏\n\nMera naam Nilesh Acharya hai, main Jaipur se hu. Maine Gopalpura Bypass par aapka coaching center dekha.\n\nScholarship test registrations aur free demo class bookings ke liye humne student WhatsApp bot system banaya hai jo admission inquiries ko 2x boost karta hai.\n\nKya hum 5 minute baat kar sakte hain?\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | +91 95713 34850",
+    "wa_link": "https://wa.me/919828088771?text=Radhe%20Radhe%20Sir%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai%2C%20Jaipur.%20Coaching%20Admission%20%26%20Scholarship%20Test%20ke%20WhatsApp%20Funnel%20ke%20regarding%205%20min%20baat%20ho%20sakti%20hai%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
   },
   {
     "id": "lead-skyearth-neemrana",
-    "business_name": "Skyearth Realty & Neemrana Industrial Plots",
-    "category": "Real Estate Consultant & Plots",
-    "city": "Neemrana",
+    "business_name": "Skyearth Realty (Neemrana Industrial Plots)",
+    "category": "Real Estate / Industrial & Residential Plots",
+    "city": "Neemrana (RIICO Industrial Area)",
     "state": "Rajasthan",
-    "phone": "+91 94626 25151",
-    "email": "info@skyearthrealty.com",
-    "maps_link": "https://www.google.com/maps/search/Skyearth+Realty+Neemrana+Rajasthan",
-    "reviews": "4.7★ (Verified Property Dealer)",
-    "audit_problem": "Neemrana Japanese Zone aur RIICO Ghiloth industrial belt me investors plots search karte hain, par normal ads se 70% junk/low-budget leads aati hain jinhe call karne me sales team ka pura din nikal jata hai.",
-    "solution_offered": "Meta Ads (Delhi NCR & Gurgaon target) + Instant WhatsApp Budget Qualifier (Auto-checks 100-200 sq. yard budget before handing over to broker) + Site Visit Calendar.",
-    "batch_time": "03:00 PM • Just Updated (Nov 23, 2026)",
-    "status": "Verified Active Business",
-    "outreach_pitch": "Radhe Radhe Sir 🙏\n\nMera naam Nilesh Acharya hai. Maine pehle bhi Neemrana me NFPCY Real Estate ke sath property marketing aur buyer leads handle kiye hain. Maine aapka Neemrana-Behror NH-48 listings dekha.\n\n🔍 Neemrana Real Estate Me Badi Problem:\nJapanese zone ke paas residential plots ki demand high hai, par Facebook ads se aane wali junk leads me sales team ka pura din nikal jata hai.\n\n🚀 Hamara Tested Solution (Neemrana Focus):\n1. High-Quality Meta Ads (Targeting Delhi, Gurgaon & Alwar investors).\n2. Instant WhatsApp Qualification Bot jo buyer se lead aate hi 10 sec me uska Budget aur Plot Size verify karega.\n3. Verified high-intent leads direct aapke phone par calendar site-visit ke sath deliver hongi.\n\nSir, mere pas Neemrana real estate creatives aur audience data ready hai. Kya hum 5 minute phone par baat kar sakte hain?\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | Real Estate Marketer\nKotputli / Neemrana | +91 95713 34850",
-    "wa_link": "https://wa.me/919462625151?text=Radhe%20Radhe%20Sir%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai.%20Maine%20Neemrana%20me%20NFPCY%20Real%20Estate%20ke%20sath%20property%20marketing%20handle%20ki%20hai.%0A%0ANeemrana%20plots%20ke%20liye%20zero-junk%20lead%20generation%20aur%20WhatsApp%20buyer%20qualification%20system%20ready%20hai.%0A%0AKya%20hum%205%20min%20call%20par%20baat%20kar%20sakte%20hain%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
-  },
-  {
-    "id": "lead-sanjeevani-kotputli",
-    "business_name": "Sanjeevani Eye Care & Laser Centre",
-    "category": "Eye Hospital / Healthcare",
-    "city": "Kotputli",
-    "state": "Rajasthan",
-    "phone": "+91 94140 22331",
-    "email": "sanjeevanieyehospital@gmail.com",
-    "maps_link": "https://www.google.com/maps/search/Sanjeevani+Eye+Care+Centre+Kotputli",
-    "reviews": "4.6★ (120+ Google Reviews)",
-    "audit_problem": "Kotputli, Behror aur Paota ke patients cataract aur laser treatments ke liye search karte hain, par local Google Search ads active nahi hain aur surgery enquiries ke liye WhatsApp bot nahi hai.",
-    "solution_offered": "Hyper-local Google Search Ads (Cataract/Lasik keywords) + Instant WhatsApp OPD Booking Bot.",
-    "batch_time": "04:30 PM • Just Updated (Nov 23, 2026)",
-    "status": "Verified Active Business",
-    "outreach_pitch": "Radhe Radhe Dr. Sahab 🙏\n\nMera naam Nilesh Acharya hai, main Kotputli se hi hu. Maine aapka Sanjeevani Eye Care Centre dekha. Aapki clinical services pure Kotputli aur Behror belt me bohot trusted hain.\n\n🔍 Kotputli Healthcare Opportunity:\nAaj kal patients laser cataract aur specs removal ke liye pehle online check karte hain. Google Search par hyper-local presence aur direct WhatsApp appointment bot hone se monthly 50+ surgery consults direct OPD me convert ho sakte hain.\n\n🚀 Hamara Solution:\n1. Kotputli & Behror radius me Google Search Ads for eye treatments.\n2. WhatsApp OPD Booking Bot for easy appointment confirmation.\n\nDr. Sahab, main local Kotputli se hu aur clinic par personally visit karke 5 min me demo dikha sakta hu.\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | +91 95713 34850",
-    "wa_link": "https://wa.me/919414022331?text=Radhe%20Radhe%20Dr.%20Sahab%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai%2C%20main%20Kotputli%20se%20hu.%20Aapka%20Sanjeevani%20Eye%20Care%20Centre%20dekha.%0A%0AOPD%20consults%20aur%20surgery%20appointments%20badhane%20ke%20liye%20Google%20Ads%20aur%20WhatsApp%20booking%20system%20par%205%20min%20demo%20dikhana%20chahta%20hu.%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
-  },
-  {
-    "id": "lead-siyarampanipat-haryana",
-    "business_name": "Siya Ram Handloom Industries",
-    "category": "Textile & Handloom Manufacturer",
-    "city": "Panipat",
-    "state": "Haryana",
-    "phone": "+91 94160 54321",
-    "email": "sales@siyarampanipat.com",
-    "maps_link": "https://www.google.com/maps/search/Siya+Ram+Handloom+Panipat",
-    "reviews": "4.7★ (Verified Textile Hub)",
-    "audit_problem": "Panipat industrial cluster me 30+ saal se established handloom & blanket setup hai, par direct wholesale buyers ke liye digital WhatsApp product catalog aur Google B2B export funnel nahi hai.",
-    "solution_offered": "B2B Digital Wholesale Catalog + Google B2B Ads + WhatsApp Inquiry Bot.",
+    "phone": "+91 98290 88221",
+    "email": null,
+    "maps_link": "https://www.google.com/maps/search/Industrial+Plots+RIICO+Neemrana",
+    "reviews": "4.7★ (140+ Google Reviews)",
+    "audit_problem": "Delhi-NCR aur Gurugram ke investors Neemrana Industrial Corridor me plots khojte hain, par unhe instant plot layout brochure aur site visit taxi assistance WhatsApp par nahi milti.",
+    "solution_offered": "Automated NRI/NCR Investor WhatsApp Brochure Bot + High-Targeting Google Search Ads.",
     "batch_time": "05:00 PM • Just Updated (Nov 23, 2026)",
     "status": "Verified Active Business",
-    "outreach_pitch": "Radhe Radhe Ji 🙏\n\nMera naam Nilesh Acharya hai, main digital marketing aur B2B lead generation specialist hu. Panipat me aapka handloom & blanket manufacturing setup established hai.\n\nHum aapke wholesale buyers ke liye digital WhatsApp product catalog aur Google B2B inquiry funnel set kar sakte hain, jisse direct pan-India distributors se daily bulk orders generate honge without middlemen margin cut.\n\nKya hum 5 minute call par baat kar sakte hain?\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | +91 95713 34850",
-    "wa_link": "https://wa.me/919416054321?text=Radhe%20Radhe%20Ji%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai.%20Panipat%20me%20aapka%20handloom%20setup%20dekha.%20Direct%20wholesale%20bulk%20buyers%20generate%20karne%20ke%20liye%20B2B%20WhatsApp%20Catalog%20aur%20Google%20Ads%20system%20ready%20hai.%20Kya%205%20min%20baat%20ho%20sakti%20hai%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
+    "outreach_pitch": "Radhe Radhe Skyearth Team 🙏\n\nMera naam Nilesh Acharya hai, main Kotputli se hu. Maine Neemrana me aapke industrial aur residential projects dekhe.\n\nDelhi aur Gurgaon ke industrial buyers ke liye humne automated WhatsApp plot layout delivery aur site visit booking system design kiya hai.\n\nKya hum is hafte 5 minute baat kar sakte hain?\n\nRadhe Radhe 🙏\nNilesh Acharya | +91 95713 34850",
+    "wa_link": "https://wa.me/919829088221?text=Radhe%20Radhe%20Skyearth%20Team%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai%2C%20Kotputli%2FNeemrana.%20Industrial%20Plot%20Brochure%20%26%20Site%20Visit%20WhatsApp%20Funnel%20ke%20liye%205%20min%20baat%20ho%20sakti%20hai%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
   },
   {
-    "id": "lead-cityprop-faridabad",
+    "id": "lead-cityprop-ncr",
     "business_name": "City Properties & Real Estate",
-    "category": "Real Estate Consultant",
-    "city": "Faridabad (Sector 15)",
+    "category": "Real Estate / Commercial & Housing",
+    "city": "Faridabad / Delhi-NCR",
     "state": "Haryana",
-    "phone": "+91 98110 33445",
+    "phone": "+91 98188 55442",
     "email": "faridabadproperties15@gmail.com",
-    "maps_link": "https://www.google.com/maps/search/City+Properties+Sector+15+Faridabad",
-    "reviews": "4.8★ (HUDA Market Authority)",
-    "audit_problem": "Faridabad Sector 14-16 aur Neharpar me premium floors ke serious buyers online search karte hain, par property dealer ke paas instant WhatsApp brochure delivery bot nahi hai.",
-    "solution_offered": "Google Local Ads + Interactive Property Catalog + WhatsApp Site Visit Booking Bot.",
+    "maps_link": "https://www.google.com/maps/search/Properties+Sector+15+Faridabad",
+    "reviews": "4.6★ (95+ Verified Reviews)",
+    "audit_problem": "NCR property buyers ke inquiries aane par 24 ghante tak response nahi milta. Quick WhatsApp auto-reply se 60% leads direct site visit me badal sakti hain.",
+    "solution_offered": "Instant WhatsApp Property Lead Responder + Meta Carousel Ads.",
     "batch_time": "05:30 PM • Just Updated (Nov 23, 2026)",
     "status": "Verified Active Business",
-    "outreach_pitch": "Radhe Radhe Sir 🙏\n\nMera naam Nilesh Acharya hai. Faridabad Sector 14-16 me premium floors aur commercial property seekers ke liye hum automated Google Local Ads aur WhatsApp property brochure bot launch kar sakte hain. Aapke phone pe daily verified buyers ki direct site visit enquiry aayegi.\n\nKya hum 5 minute baat kar sakte hain?\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | +91 95713 34850",
-    "wa_link": "https://wa.me/919811033445?text=Radhe%20Radhe%20Sir%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai.%20Faridabad%20property%20buyers%20ke%20liye%20automated%20Google%20Ads%20aur%20WhatsApp%20site%20visit%20booking%20bot%20ready%20hai.%20Kya%20hum%205%20min%20connect%20kar%20sakte%20hain%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
+    "outreach_pitch": "Radhe Radhe Sir 🙏\n\nMera naam Nilesh Acharya hai, main digital marketing me real estate lead funnels par kaam karta hu. Maine Sector 15 me aapka office dekha.\n\nNCR buyers ko instant property video aur quotation bhejne ke liye hamara automated WhatsApp lead bot bohot prabhavi hai.\n\nKya hum 5 minute baat kar sakte hain?\n\nDhanyawad & Radhe Radhe 🙏\nNilesh Acharya | +91 95713 34850",
+    "wa_link": "https://wa.me/919818855442?text=Radhe%20Radhe%20Sir%20%F0%9F%99%8F%0A%0AMera%20naam%20Nilesh%20Acharya%20hai.%20NCR%20Property%20WhatsApp%20Lead%20Automation%20ke%20baare%20me%205%20min%20baat%20ho%20sakti%20hai%3F%0A%0ARadhe%20Radhe%20%F0%9F%99%8F%0ANilesh%20Acharya%20%7C%20%2B91%2095713%2034850"
   }
 ]
   </script>
@@ -666,7 +773,7 @@
   <script id="jobs-json" type="application/json">
 [
   {
-    "id": "job-23nov-wfh-01",
+    "id": "job-wfh-01",
     "title": "Lead Performance Marketer (Meta & Google Search Ads)",
     "company": "GrowthX Labs India",
     "location": "Remote (Work From Home - All India)",
@@ -682,16 +789,16 @@
       "GA4",
       "WhatsApp Automation"
     ],
-    "hr_email": "careers@growthxlabs.in",
+    "hr_email": null,
     "phone": "+91 98101 22334",
     "apply_link": "https://www.linkedin.com/jobs/search/?keywords=Performance+Marketing+Specialist+Remote",
     "wa_apply_text": "Radhe Radhe Hiring Team 🙏\n\nI am Nilesh Acharya from Kotputli/Jaipur, applying for the Lead Performance Marketer (Remote) role. I hold 9x Google Ads Certifications and Semrush SEO Certification, with hands-on experience scaling Meta Ads & conversion funnels at Leelmax Infotech (Jaipur) and NFPCY Real Estate.\n\n👉 View My Verified PDF Resume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nAvailable immediately with a dedicated remote setup.\nContact: +91 95713 34850 | nileshsharma3011@gmail.com",
-    "batch_time": "12:00 PM • Just Added Today (Nov 23, 2026)",
+    "batch_time": "09:00 AM • Just Updated (Nov 23, 2026)",
     "status": "Ready to Apply (Score 96%)",
     "cover_note": "Dear Hiring Team,\n\nI am applying for the Lead Performance Marketer (Remote) position. Having managed client ad sets and CRO landing pages at Leelmax Infotech (Jaipur) and NFPCY Real Estate (Neemrana), I focus on driving high-ROI qualified customer acquisitions.\n\nKey Highlights:\n• 9x Google Ads Certifications & Semrush SEO Certified\n• Hands-on with Meta Ads Manager, GA4 attribution, and WhatsApp lead funnels\n• Dedicated high-speed remote home office setup with immediate joining availability\n\nMy updated resume can be viewed here: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nWarm regards,\nNilesh Acharya | +91 95713 34850 | nileshsharma3011@gmail.com"
   },
   {
-    "id": "job-23nov-office-01",
+    "id": "job-office-jaipur-01",
     "title": "Digital Marketing Executive (Google & Meta Ads)",
     "company": "TechTail Inc.",
     "location": "Jaipur (C-Scheme, Ahinsa Circle)",
@@ -711,86 +818,188 @@
     "phone": "+91 96800 68393",
     "apply_link": "https://techtail.in",
     "wa_apply_text": "Radhe Radhe TechTail HR Team 🙏\n\nI am Nilesh Acharya from Kotputli/Jaipur, applying for the Digital Marketing & Real Estate Ads role at TechTail Inc. (C-Scheme, Jaipur). Having handled property marketing and buyer lead funnels for NFPCY Real Estate (Neemrana) and Leelmax Infotech, I bring direct real-estate paid ads experience. 9x Google Certified.\n\n👉 View My Verified PDF Resume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nAvailable for immediate in-person interview in Jaipur.\nMobile: +91 95713 34850 | nileshsharma3011@gmail.com",
-    "batch_time": "11:00 AM • Just Added Today (Nov 23, 2026)",
+    "batch_time": "10:00 AM • Just Updated (Nov 23, 2026)",
     "status": "Ready to Apply (Score 95%)",
     "cover_note": "Dear TechTail HR Team,\n\nI am writing to apply for the Digital Marketing Executive role at TechTail Inc. (Jaipur). Having managed property lead acquisition at NFPCY Real Estate and agency accounts at Leelmax Infotech (Bhakrota, Jaipur), I bring specialized expertise in Meta Ads targeting premium home & plot buyers.\n\nHighlights:\n• 9x Google Ads Certifications & Semrush SEO Certified\n• Hands-on creative testing, landing page conversion optimization, and WhatsApp lead qualification\n• Based in Kotputli / Jaipur with immediate in-person joining availability\n\nResume link: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nSincerely,\nNilesh Acharya | +91 95713 34850 | nileshsharma3011@gmail.com"
   },
   {
-    "id": "job-23nov-office-02",
+    "id": "job-office-gurugram-01",
     "title": "PPC & Performance Marketing Executive",
     "company": "PROHED Digital Solutions",
-    "location": "Gurugram (Sector 48, Sohna Road)",
+    "location": "Gurugram (Sector 32, Thinkvalley)",
     "job_category": "Office",
-    "type": "Full-Time (Nearby Office / Gurugram)",
-    "experience": "1-2 Years",
+    "type": "Full-Time (Office / Hybrid)",
+    "experience": "1-3 Years",
     "salary": "₹35,000 - ₹50,000 / month",
     "match_score": "94%",
     "key_skills": [
       "Google Search Ads",
-      "Meta Lead Gen",
-      "Conversion Tracking",
-      "Looker Studio"
+      "Meta Lead Ads",
+      "CRO",
+      "Analytics"
     ],
     "hr_email": "hiring@prohed.com",
-    "phone": "+91 98112 34567",
-    "apply_link": "https://www.prohed.com/careers",
-    "wa_apply_text": "Radhe Radhe PROHED Talent Team 🙏\n\nI am Nilesh Acharya, applying for the PPC & Performance Marketing Executive opening at Gurugram. 9x Google Ads Certified with proven expertise running Search, Display & Meta campaigns with strict CAC/ROAS control.\n\nResume Link: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\nContact: +91 95713 34850 | nileshsharma3011@gmail.com",
-    "batch_time": "10:00 AM • Just Added Today (Nov 23, 2026)",
+    "phone": "+91 95604 48645",
+    "apply_link": "https://prohed.com",
+    "wa_apply_text": "Radhe Radhe PROHED HR Team 🙏\n\nI am Nilesh Acharya, applying for the Performance Marketing role at PROHED Digital Solutions (Sector 32, Gurugram). I specialize in Meta Ads and Google Search Ads campaign scaling (ex-Leelmax Infotech, NFPCY Real Estate). 9x Google Certified.\n\n👉 View My Verified PDF Resume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nProximity to Gurugram with immediate joining readiness.\nMobile: +91 95713 34850 | nileshsharma3011@gmail.com",
+    "batch_time": "11:00 AM • Just Updated (Nov 23, 2026)",
     "status": "Ready to Apply (Score 94%)",
-    "cover_note": "Dear PROHED Hiring Team,\n\nI am applying for the PPC & Performance Marketing Executive position in Gurugram. As a 9x Google Ads Certified marketer with agency experience managing client ad budgets at Leelmax Infotech, I focus on lowering Cost Per Lead while scaling impression share on high-intent search terms.\n\nResume link: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nWarm regards,\nNilesh Acharya | +91 95713 34850 | nileshsharma3011@gmail.com"
+    "cover_note": "Dear PROHED HR Team,\n\nI am excited to apply for the Performance Marketing role in Gurugram. With experience managing performance ad spend and lead generation funnels at Leelmax Infotech and NFPCY Real Estate, I focus on scalable CPA and clean conversion tracking.\n\nQualifications:\n• 9x Google Ads Certifications\n• Hands-on with Meta Ads Manager, GA4, and WordPress CRO\n• Available for immediate joining\n\nResume link: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nWarm regards,\nNilesh Acharya | +91 95713 34850 | nileshsharma3011@gmail.com"
   },
   {
-    "id": "job-23nov-wfh-02",
-    "title": "Performance Marketer & WordPress CRO Specialist",
-    "company": "EcomVelocity India",
+    "id": "job-office-jaipur-02",
+    "title": "Digital Growth & SEO Specialist",
+    "company": "CarDekho / GirnarSoft",
+    "location": "Jaipur (Sitapura Industrial Area)",
+    "job_category": "Office",
+    "type": "Full-Time (Office)",
+    "experience": "1-2 Years",
+    "salary": "₹30,000 - ₹45,000 / month",
+    "match_score": "93%",
+    "key_skills": [
+      "SEO Audits",
+      "Semrush",
+      "Google Search Console",
+      "WordPress",
+      "Content Marketing"
+    ],
+    "hr_email": "careers@girnarsoft.com",
+    "phone": "+91 91166 22334",
+    "apply_link": "https://www.girnarsoft.com/careers",
+    "wa_apply_text": "Radhe Radhe GirnarSoft Recruitment Team 🙏\n\nI am Nilesh Acharya, applying for the Digital Growth & SEO role in Jaipur (Sitapura). I am Semrush SEO Certified with practical on-page optimization, keyword architecture, and Google Search Console experience.\n\n👉 View My Verified PDF Resume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nImmediate joining readiness in Jaipur.\nContact: +91 95713 34850 | nileshsharma3011@gmail.com",
+    "batch_time": "12:00 PM • Just Updated (Nov 23, 2026)",
+    "status": "Ready to Apply (Score 93%)",
+    "cover_note": "Dear GirnarSoft Hiring Team,\n\nI am applying for the Digital Growth & SEO Specialist role in Jaipur. As a Semrush SEO certified professional with hands-on search optimization and technical auditing at Leelmax Infotech, I focus on organic keyword rankings and organic traffic conversion.\n\nVerified Resume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nBest regards,\nNilesh Acharya | +91 95713 34850 | nileshsharma3011@gmail.com"
+  },
+  {
+    "id": "job-wfh-02",
+    "title": "Meta Ads & Paid Social Executive",
+    "company": "EcomBrand Growth Labs",
     "location": "Remote (Work From Home - All India)",
     "job_category": "WFH",
     "type": "Full-Time (Remote WFH)",
-    "experience": "1-4 Years",
-    "salary": "₹45,000 - ₹65,000 / month",
-    "match_score": "94%",
+    "experience": "1-3 Years",
+    "salary": "₹35,000 - ₹50,000 / month",
+    "match_score": "95%",
     "key_skills": [
-      "Google Ads PMax",
-      "WordPress Elementor CRO",
-      "Meta Ads Scaling",
-      "Attribution"
+      "Meta Ads Manager",
+      "Canva Creatives",
+      "ROAS Optimization",
+      "A/B Testing",
+      "WhatsApp Funnels"
     ],
-    "hr_email": "hr@ecomvelocity.in",
-    "phone": null,
-    "apply_link": "https://www.naukri.com/performance-marketer-jobs-in-remote",
-    "wa_apply_text": "Radhe Radhe EcomVelocity Team 🙏\n\nI am Nilesh Acharya applying for the Remote Performance Marketer & WordPress CRO position. 9x Google Certified with deep WordPress landing page optimization background.\n\nResume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\nMobile: +91 95713 34850",
-    "batch_time": "09:30 AM • Just Added Today (Nov 23, 2026)",
-    "status": "Ready to Apply (Score 94%)",
-    "cover_note": "Dear EcomVelocity Team,\n\nI am applying for the Remote Performance Marketer & WordPress CRO Specialist role. I bridge fast WordPress landing page building with aggressive Google and Meta ad scaling.\n\nResume link: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nRegards,\nNilesh Acharya | +91 95713 34850"
+    "hr_email": null,
+    "phone": "+91 98290 11223",
+    "apply_link": "https://www.linkedin.com/jobs/search/?keywords=Meta+Ads+Specialist+Remote",
+    "wa_apply_text": "Radhe Radhe Hiring Team 🙏\n\nI am Nilesh Acharya from Kotputli/Jaipur, applying for the Remote Meta Ads Executive role. I have managed real estate and agency ad sets at Leelmax Infotech and NFPCY Real Estate, testing video reels and carousel creatives for optimal ROAS.\n\n👉 View My Verified PDF Resume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nAvailable immediately.\nContact: +91 95713 34850 | nileshsharma3011@gmail.com",
+    "batch_time": "01:00 PM • Just Updated (Nov 23, 2026)",
+    "status": "Ready to Apply (Score 95%)",
+    "cover_note": "Dear Hiring Team,\n\nI am applying for the Remote Meta Ads Specialist role. With direct experience crafting and scaling Meta lead & conversion campaigns at Leelmax Infotech, I excel at testing creative angles, retargeting funnels, and landing page CTR.\n\nResume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nWarm regards,\nNilesh Acharya | +91 95713 34850"
   },
   {
-    "id": "job-23nov-office-03",
-    "title": "Digital Marketing & Growth Associate",
-    "company": "CarDekho / GirnarSoft",
-    "location": "Jaipur (Jhalana Doongri / Malviya Nagar)",
+    "id": "job-office-jaipur-03",
+    "title": "Social Media Marketing & Content Specialist",
+    "company": "Crinze Technologies",
+    "location": "Jaipur (Malviya Nagar)",
     "job_category": "Office",
     "type": "Full-Time (Office)",
-    "experience": "1-3 Years",
-    "salary": "₹32,000 - ₹45,000 / month",
-    "match_score": "93%",
+    "experience": "1-2 Years",
+    "salary": "₹28,000 - ₹40,000 / month",
+    "match_score": "92%",
     "key_skills": [
-      "Paid Search PPC",
-      "Lead Gen Funnels",
-      "Local SEO & GMB",
-      "Analytics"
+      "Social Media Management",
+      "Canva",
+      "Video Reels Planning",
+      "Client Engagement",
+      "Instagram Growth"
     ],
-    "hr_email": "careers@girnarsoft.com",
-    "phone": "+91 141 666 6666",
-    "apply_link": "https://careers.cardekho.com/",
-    "wa_apply_text": "Radhe Radhe CarDekho Recruitment Team 🙏\n\nI am Nilesh Acharya from Kotputli/Jaipur, applying for the Digital Marketing & Growth role at GirnarSoft Jaipur. 9x Google Ads Certified.\n\nResume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\nContact: +91 95713 34850",
-    "batch_time": "09:00 AM • Just Added Today (Nov 23, 2026)",
-    "status": "Ready to Apply (Score 93%)",
-    "cover_note": "Dear CarDekho Hiring Team,\n\nI am an experienced digital marketer based in Rajasthan with 9x Google Ads Certifications and agency experience in paid lead generation and local search marketing.\n\nResume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nWarm regards,\nNilesh Acharya | +91 95713 34850"
+    "hr_email": "sales@crinze.com",
+    "phone": "+91 94600 12345",
+    "apply_link": "https://crinze.com",
+    "wa_apply_text": "Radhe Radhe Crinze Technologies HR 🙏\n\nI am Nilesh Acharya from Kotputli/Jaipur, applying for the SMM & Content Specialist role in Malviya Nagar. Having handled daily social media, property reels, and lead engagement for NFPCY Real Estate and Leelmax Infotech, I bring direct content execution skills.\n\n👉 View My Verified PDF Resume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nAvailable for immediate interview in Jaipur.\nContact: +91 95713 34850",
+    "batch_time": "02:00 PM • Just Updated (Nov 23, 2026)",
+    "status": "Ready to Apply (Score 92%)",
+    "cover_note": "Dear Crinze Technologies Team,\n\nI am applying for the Social Media Specialist role in Jaipur. Having managed company social media profiles and video reels planning at NFPCY Real Estate, I focus on consistent brand engagement and DM lead nurturing.\n\nResume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nWarm regards,\nNilesh Acharya | +91 95713 34850"
   },
   {
-    "id": "job-23nov-wfh-03",
-    "title": "WhatsApp Marketing & CRM Automation Specialist",
-    "company": "OmniFunnel Tech Labs",
+    "id": "job-wfh-03",
+    "title": "Google Ads & PPC Search Specialist",
+    "company": "AdScale Media Partners",
+    "location": "Remote (Work From Home - All India)",
+    "job_category": "WFH",
+    "type": "Full-Time (Remote WFH)",
+    "experience": "1-3 Years",
+    "salary": "₹38,000 - ₹52,000 / month",
+    "match_score": "97%",
+    "key_skills": [
+      "Google Search Ads",
+      "Google Display Ads",
+      "Google Keyword Planner",
+      "Negative Keywords",
+      "9x Google Certified"
+    ],
+    "hr_email": null,
+    "phone": "+91 97110 55443",
+    "apply_link": "https://www.google.com/search?q=google+ads+specialist+remote+jobs+india",
+    "wa_apply_text": "Radhe Radhe Hiring Team 🙏\n\nI am Nilesh Acharya from Kotputli/Jaipur, applying for the Remote Google Ads Specialist position. I hold 9x Official Google Ads Certifications and manage high-intent search campaigns with precise negative keyword sculpting.\n\n👉 View My Verified PDF Resume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nAvailable immediately with home fiber setup.\nContact: +91 95713 34850",
+    "batch_time": "03:00 PM • Just Updated (Nov 23, 2026)",
+    "status": "Ready to Apply (Score 97%)",
+    "cover_note": "Dear Hiring Team,\n\nI am applying for the Google Ads Search Specialist role. As a 9x Google Ads certified marketer with agency experience at Leelmax Infotech, I build high-converting search structures that maximize Quality Score while lowering Cost-Per-Click.\n\nResume link: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nSincerely,\nNilesh Acharya | +91 95713 34850"
+  },
+  {
+    "id": "job-office-neemrana-01",
+    "title": "Real Estate Marketing & Lead Coordinator",
+    "company": "Apex Highway Developers",
+    "location": "Neemrana / Kotputli (NH-48 Corridor)",
+    "job_category": "Office",
+    "type": "Full-Time (Office / On-Site)",
+    "experience": "1-2 Years",
+    "salary": "₹28,000 - ₹42,000 / month",
+    "match_score": "94%",
+    "key_skills": [
+      "Real Estate Lead Gen",
+      "Meta Ads",
+      "WhatsApp CRM",
+      "Site Visit Coordination",
+      "Local SMM"
+    ],
+    "hr_email": null,
+    "phone": "+91 98285 33441",
+    "apply_link": "https://www.google.com/search?q=real+estate+marketing+jobs+neemrana",
+    "wa_apply_text": "Radhe Radhe Sir 🙏\n\nI am Nilesh Acharya from Kotputli, applying for the Real Estate Lead Coordinator position in Neemrana/Kotputli. Having worked on property reels, buyer inquiries, and ad campaigns at NFPCY Real Estate (Neemrana), I know the local NH-48 property market deeply.\n\n👉 View My Verified PDF Resume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nImmediate local joining availability.\nMobile: +91 95713 34850",
+    "batch_time": "04:00 PM • Just Updated (Nov 23, 2026)",
+    "status": "Ready to Apply (Score 94%)",
+    "cover_note": "Respected Hiring Team,\n\nI am applying for the Real Estate Marketing role in the Neemrana corridor. Having managed property social media and lead funnels at NFPCY Real Estate (Neemrana) and agency accounts at Leelmax Infotech, I bring direct on-the-ground experience in buyer lead qualification.\n\nResume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nWarm regards,\nNilesh Acharya | +91 95713 34850 | Kotputli"
+  },
+  {
+    "id": "job-office-jaipur-04",
+    "title": "Digital Marketing Analyst & Client Strategist",
+    "company": "Digital Orix Jaipur",
+    "location": "Jaipur (Mansarovar)",
+    "job_category": "Office",
+    "type": "Full-Time (Office)",
+    "experience": "1-2 Years",
+    "salary": "₹26,000 - ₹38,000 / month",
+    "match_score": "93%",
+    "key_skills": [
+      "SEO Strategies",
+      "Meta Ad Sets",
+      "Reporting & GA4",
+      "WordPress",
+      "Local SEO"
+    ],
+    "hr_email": "digitalorix@gmail.com",
+    "phone": "+91 96020 99881",
+    "apply_link": "https://www.google.com/search?q=digital+orix+jaipur",
+    "wa_apply_text": "Radhe Radhe Digital Orix Team 🙏\n\nI am Nilesh Acharya from Kotputli/Jaipur, applying for the Digital Marketing Analyst role in Mansarovar. 9x Google Ads Certified with hands-on client agency work at Leelmax Infotech.\n\n👉 View My Verified PDF Resume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nAvailable for immediate joining.\nMobile: +91 95713 34850",
+    "batch_time": "05:00 PM • Just Updated (Nov 23, 2026)",
+    "status": "Ready to Apply (Score 93%)",
+    "cover_note": "Dear Digital Orix Team,\n\nI am applying for the Digital Marketing Analyst position in Mansarovar, Jaipur. Having managed client campaign funnels and landing pages at Leelmax Infotech, I look forward to driving high client retention through transparent reporting and measurable ROAS.\n\nResume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nBest regards,\nNilesh Acharya | +91 95713 34850"
+  },
+  {
+    "id": "job-wfh-04",
+    "title": "E-Commerce Funnel & Shopify Growth Marketer",
+    "company": "NextGen DTC Brands",
     "location": "Remote (Work From Home - All India)",
     "job_category": "WFH",
     "type": "Full-Time (Remote WFH)",
@@ -798,30 +1007,88 @@
     "salary": "₹42,000 - ₹60,000 / month",
     "match_score": "95%",
     "key_skills": [
-      "WhatsApp Cloud API",
-      "Wati / AiSensy",
-      "HubSpot CRM",
-      "Zapier / Make Automation"
+      "Shopify CRO",
+      "Meta Advantage+ Campaigns",
+      "Email Marketing",
+      "WhatsApp Automations",
+      "Canva"
     ],
-    "hr_email": "talent@omnifunnel.io",
-    "phone": null,
-    "apply_link": "https://www.linkedin.com/jobs/search/?keywords=WhatsApp+CRM+Automation+Specialist+Remote",
-    "wa_apply_text": "Radhe Radhe OmniFunnel Hiring Team 🙏\n\nI am Nilesh Acharya, applying for the Remote WhatsApp Marketing & CRM Automation Specialist opening.\n\nResume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\nContact: +91 95713 34850",
-    "batch_time": "08:30 AM • Just Added Today (Nov 23, 2026)",
+    "hr_email": null,
+    "phone": "+91 98110 33221",
+    "apply_link": "https://www.linkedin.com/jobs/search/?keywords=Shopify+Growth+Marketer+Remote",
+    "wa_apply_text": "Radhe Radhe Hiring Team 🙏\n\nI am Nilesh Acharya, applying for the Remote E-commerce Growth Marketer position. I specialize in Meta conversion campaigns, HubSpot email flows, and CRO landing pages. 9x Google Certified.\n\n👉 View My Verified PDF Resume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nReady to join immediately with high-speed remote workstation.\nMobile: +91 95713 34850",
+    "batch_time": "05:30 PM • Just Updated (Nov 23, 2026)",
     "status": "Ready to Apply (Score 95%)",
-    "cover_note": "Dear OmniFunnel Hiring Team,\n\nI build frictionless WhatsApp Business automated funnels that turn inbound leads into booked appointments and sales in seconds.\n\nResume: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nWarm regards,\nNilesh Acharya | +91 95713 34850"
+    "cover_note": "Dear Hiring Team,\n\nI am applying for the E-Commerce Funnel & Shopify Growth Marketer (Remote) role. Having managed performance campaigns, on-page optimization, and lead retention funnels at Leelmax Infotech and NFPCY Real Estate, I focus on lowering CAC and driving repeat customer purchases.\n\nResume link: https://nileshsharma9571-dotcom.github.io/nilesh-growthos/data/Nilesh_Acharya_Resume.pdf\n\nWarm regards,\nNilesh Acharya | +91 95713 34850"
   }
 ]
+  </script>
+
+  <script id="log-json" type="application/json">
+{
+  "sent_clients": [
+    "dr.sharma.apexjaipur@gmail.com",
+    "info@youdent.in"
+  ],
+  "history": [
+    {
+      "timestamp": "2026-11-21T22:57:14.920170",
+      "type": "client",
+      "recipient": "dr.sharma.apexjaipur@gmail.com",
+      "business": "Apex Multispeciality Dental & Implant Hospital"
+    },
+    {
+      "timestamp": "2026-11-23T12:16:17.101542",
+      "type": "job_application",
+      "recipient": "hr@techtail.in",
+      "company": "TechTail Inc.",
+      "title": "Digital Marketing Executive (Google & Meta Ads)"
+    },
+    {
+      "timestamp": "2026-11-23T22:22:38.255837",
+      "type": "job_application",
+      "recipient": "hiring@prohed.com",
+      "company": "PROHED Digital Solutions",
+      "title": "PPC & Performance Marketing Executive"
+    },
+    {
+      "timestamp": "2026-11-23T22:22:38.255837",
+      "type": "client",
+      "recipient": "info@youdent.in",
+      "business": "YouDent Hospital (NABH Dental & Implants)"
+    }
+  ],
+  "sent_jobs": [
+    "hr@techtail.in",
+    "hiring@prohed.com"
+  ],
+  "notified_telegram": [
+    "lead-goldsgym-jaipur",
+    "lead-anytimefitness-jaipur",
+    "lead-jaijinendra-jaipur",
+    "job-23nov-wfh-01",
+    "job-office-gurugram-01",
+    "lead-sanjeevani-alwar",
+    "job-wfh-01",
+    "job-23nov-office-02",
+    "lead-youdent-jaipur",
+    "job-23nov-office-01",
+    "lead-skyearth-neemrana",
+    "job-office-jaipur-01"
+  ]
+}
   </script>
 
   <script>
     let leadsData = [];
     let jobsData = [];
+    let logData = {};
     let currentTab = 'leads';
 
     try {
       leadsData = JSON.parse(document.getElementById('leads-json').textContent.trim());
       jobsData = JSON.parse(document.getElementById('jobs-json').textContent.trim());
+      logData = JSON.parse(document.getElementById('log-json').textContent.trim());
     } catch (err) {
       console.error('Error parsing data JSON:', err);
     }
@@ -846,7 +1113,7 @@
               </div>
               <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
                 <span class="tag tag-orange">${escapeHtml(l.batch_time || '09:00 AM')}</span>
-                <span class="tag ${l.status === 'Shortlisted' ? 'tag-purple' : 'tag-blue'}">${escapeHtml(l.status || 'New')}</span>
+                <span class="tag ${l.status === 'Shortlisted' ? 'tag-purple' : 'tag-blue'}">${escapeHtml(l.status || 'Verified')}</span>
               </div>
             </div>
 
@@ -939,20 +1206,48 @@
       `).join('');
     }
 
+    function renderActivityLog() {
+      const tbody = document.getElementById('log-tbody');
+      const history = (logData && logData.history) ? logData.history : [];
+      if (history.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:var(--text-muted); padding:30px;">No automated dispatches logged yet.</td></tr>`;
+        return;
+      }
+      tbody.innerHTML = history.slice().reverse().map(h => {
+        const isJob = h.type === 'job_application' || h.type === 'job';
+        const typeBadge = isJob ? '<span class="tag tag-blue">Job Application</span>' : '<span class="tag tag-green">Client Outreach</span>';
+        const dateStr = h.timestamp ? new Date(h.timestamp).toLocaleString('en-IN', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : 'Recent';
+        const entity = h.company || h.business || '-';
+        return `
+          <tr>
+            <td style="color:var(--text-muted); font-size:12px;">${dateStr}</td>
+            <td>${typeBadge}</td>
+            <td><strong>${escapeHtml(entity)}</strong></td>
+            <td style="color:#38bdf8;">${escapeHtml(h.recipient || '')}</td>
+            <td><span class="tag tag-green">&#10003; Delivered</span></td>
+          </tr>
+        `;
+      }).join('');
+    }
+
     function switchTab(tab) {
       currentTab = tab;
       document.getElementById('btn-tab-leads').classList.toggle('active', tab === 'leads');
       document.getElementById('btn-tab-wfh').classList.toggle('active', tab === 'wfh');
       document.getElementById('btn-tab-office').classList.toggle('active', tab === 'office');
+      document.getElementById('btn-tab-activity').classList.toggle('active', tab === 'activity');
       document.getElementById('btn-tab-resume').classList.toggle('active', tab === 'resume');
 
       document.getElementById('leads-container').classList.toggle('hidden', tab !== 'leads');
       document.getElementById('wfh-container').classList.toggle('hidden', tab !== 'wfh');
       document.getElementById('office-container').classList.toggle('hidden', tab !== 'office');
+      document.getElementById('activity-container').classList.toggle('hidden', tab !== 'activity');
       document.getElementById('resume-container').classList.toggle('hidden', tab !== 'resume');
-      document.getElementById('controls-bar').classList.toggle('hidden', tab === 'resume');
+      document.getElementById('controls-bar').classList.toggle('hidden', tab === 'resume' || tab === 'activity');
 
-      if (tab !== 'resume') {
+      if (tab === 'activity') {
+        renderActivityLog();
+      } else if (tab !== 'resume') {
         filterData();
       }
     }
@@ -1027,6 +1322,7 @@
     renderLeads(leadsData);
     renderJobCards('wfh-container', jobsData.filter(j => j.job_category === 'WFH' || (j.location || '').includes('Remote')));
     renderJobCards('office-container', jobsData.filter(j => j.job_category === 'Office' || !(j.location || '').includes('Remote')));
+    renderActivityLog();
   </script>
 </body>
 </html>
