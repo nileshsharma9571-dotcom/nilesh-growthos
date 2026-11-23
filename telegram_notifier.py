@@ -26,29 +26,15 @@ def send_telegram_alert(message):
         print("[TELEGRAM] Missing bot token or chat_id.")
         return False
 
-    # Prefer curl with IPv4 on Windows if available
-    curl_bin = shutil.which('curl.exe') or shutil.which('curl')
-    if curl_bin:
-        cmd = [
-            curl_bin, '-4', '-s',
-            f'https://api.telegram.org/bot{token}/sendMessage',
-            '-d', f'chat_id={chat_id}',
-            '--data-urlencode', f'text={message}'
-        ]
-        try:
-            res = subprocess.run(cmd, capture_output=True, text=True, timeout=15)
-            if '"ok":true' in res.stdout:
-                return True
-        except Exception:
-            pass
-
-    # Fallback to urllib.request
+    cmd = [
+        'curl.exe', '-4', '-s',
+        f'https://api.telegram.org/bot{token}/sendMessage',
+        '-d', f'chat_id={chat_id}',
+        '--data-urlencode', f'text={message}'
+    ]
     try:
-        data = urllib.parse.urlencode({'chat_id': chat_id, 'text': message}).encode('utf-8')
-        req = urllib.request.Request(f'https://api.telegram.org/bot{token}/sendMessage', data=data)
-        with urllib.request.urlopen(req, timeout=10) as resp:
-            body = resp.read().decode('utf-8')
-            return '"ok":true' in body
+        res = subprocess.run(cmd, capture_output=True, text=True, timeout=10)
+        return '"ok":true' in res.stdout
     except Exception as e:
         print(f"[TELEGRAM ERROR] {e}")
         return False
