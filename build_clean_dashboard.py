@@ -2,7 +2,7 @@ import json
 import os
 import datetime
 
-BASE_DIR = r"C:\Users\hp\.gemini\antigravity\scratch\client-job-automation"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 LEADS_FILE = os.path.join(DATA_DIR, "leads.json")
 JOBS_FILE = os.path.join(DATA_DIR, "jobs.json")
