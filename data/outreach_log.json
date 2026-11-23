@@ -29,22 +29,30 @@
       "recipient": "hr@prohed.com",
       "company": "PROHED Digital Solutions",
       "title": "PPC & Performance Marketing Executive"
+    },
+    {
+      "timestamp": "2026-11-23T13:46:07.321120",
+      "type": "job_application",
+      "recipient": "sales@crinze.com",
+      "company": "CRINZE Digital Agency",
+      "title": "PPC & Performance Marketing Executive"
     }
   ],
   "sent_jobs": [
     "hr@scaleapex.in",
     "hr@techtail.in",
-    "hr@prohed.com"
+    "hr@prohed.com",
+    "sales@crinze.com"
   ],
   "notified_telegram": [
     "lead-jaijinendra-jaipur",
-    "job-23nov-wfh-01",
+    "job-23nov-office-02",
     "job-23nov-office-01",
-    "lead-skyearth-neemrana",
     "lead-youdent-jaipur",
-    "job-wfh-01",
     "lead-anytimefitness-jaipur",
-    "job-23nov-office-02"
+    "job-wfh-01",
+    "lead-skyearth-neemrana",
+    "job-23nov-wfh-01"
   ],
   "replied_contacts": [
     "no-reply@accounts.google.com",
