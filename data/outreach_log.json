@@ -22,20 +22,33 @@
       "recipient": "hr@techtail.in",
       "company": "TechTail Inc.",
       "title": "Digital Marketing Executive (Google & Meta Ads)"
+    },
+    {
+      "timestamp": "2026-11-23T06:58:33.369895",
+      "type": "job_application",
+      "recipient": "hr@prohed.com",
+      "company": "PROHED Digital Solutions",
+      "title": "PPC & Performance Marketing Executive"
     }
   ],
   "sent_jobs": [
     "hr@scaleapex.in",
-    "hr@techtail.in"
+    "hr@techtail.in",
+    "hr@prohed.com"
   ],
   "notified_telegram": [
-    "job-23nov-office-02",
-    "lead-skyearth-neemrana",
-    "lead-anytimefitness-jaipur",
-    "job-wfh-01",
-    "lead-youdent-jaipur",
-    "job-23nov-wfh-01",
     "lead-jaijinendra-jaipur",
-    "job-23nov-office-01"
+    "job-23nov-wfh-01",
+    "job-23nov-office-01",
+    "lead-skyearth-neemrana",
+    "lead-youdent-jaipur",
+    "job-wfh-01",
+    "lead-anytimefitness-jaipur",
+    "job-23nov-office-02"
+  ],
+  "replied_contacts": [
+    "no-reply@accounts.google.com",
+    "no-reply@google.com",
+    "mailer-daemon@googlemail.com"
   ]
 }
