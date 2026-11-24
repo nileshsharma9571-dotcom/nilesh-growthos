@@ -1,18 +1,9 @@
 import re
 import socket
-import subprocess
-import os
 
 DISPOSABLE_DOMAINS = {
     "mailinator.com", "tempmail.com", "guerrillamail.com", "10minutemail.com",
-    "trashmail.com", "sharklasers.com", "dispostable.com", "fakeinbox.com",
-    "scaleapex.in", "growthxlabs.in", "ecomvelocity.in", "omnifunnel.io",
-    "skyearthrealty.com", "siyarampanipat.com"
-}
-
-MAJOR_VALID_PROVIDERS = {
-    "gmail.com", "googlemail.com", "yahoo.com", "yahoo.in", "outlook.com",
-    "hotmail.com", "icloud.com", "zoho.com", "rediffmail.com"
+    "trashmail.com", "sharklasers.com", "dispostable.com", "fakeinbox.com"
 }
 
 def is_valid_email(email):
@@ -28,44 +19,24 @@ def is_valid_email(email):
 
     domain = email.split('@')[1]
 
-    # 2. Check for disposable or known dead domains
+    # 2. Check for disposable/throwaway domains
     if domain in DISPOSABLE_DOMAINS:
-        return False, f"Domain '{domain}' is blocked (synthetic or dead domain)"
+        return False, "Disposable or temporary email domain"
 
-    # 3. Major providers are instantly valid
-    if domain in MAJOR_VALID_PROVIDERS:
-        return True, "Valid major email provider"
-
-    # 4. Check DNS A/AAAA Host Record
+    # 3. DNS Host Check (Domain must exist and resolve to an IP)
     try:
         socket.gethostbyname(domain)
     except Exception:
         return False, f"Domain '{domain}' does not exist or has no DNS records"
 
-    # 5. Check MX record using nslookup
-    try:
-        cmd = ['nslookup', '-type=mx', domain]
-        res = subprocess.run(cmd, capture_output=True, text=True, timeout=5)
-        out = res.stdout.lower()
-        if "mail exchanger" in out or "mx preference" in out:
-            return True, f"Verified domain with active MX mail exchangers"
-        elif "server can't find" in out or "non-existent domain" in out:
-            return False, f"Domain '{domain}' has no active MX records"
-    except Exception:
-        pass
-
-    # Fallback: if domain resolved via DNS
-    return True, "Valid domain with active DNS host"
+    return True, "Valid and active domain"
 
 if __name__ == "__main__":
     test_emails = [
-        "hr@techtail.in",
-        "hiring@prohed.com",
-        "careers@girnarsoft.com",
-        "info@youdent.in",
-        "hr@scaleapex.in",
-        "careers@growthxlabs.in",
-        "jaijinendradental@gmail.com"
+        "dr.sharma.apexjaipur@gmail.com",
+        "fakeuser@fake123abcxyz99.com",
+        "user@mailinator.com",
+        "invalid-email-format"
     ]
     for em in test_emails:
         valid, reason = is_valid_email(em)
