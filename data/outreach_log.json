@@ -2,8 +2,7 @@
   "sent_clients": [
     "dr.sharma.apexjaipur@gmail.com",
     "info@youdent.in",
-    "jaijinendradental@gmail.com",
-    "vaishalinagar@anytimefitness.in"
+    "jaijinendradental@gmail.com"
   ],
   "history": [
     {
@@ -33,62 +32,47 @@
       "business": "YouDent Hospital (NABH Dental & Implants)"
     },
     {
-      "timestamp": "2026-11-23T16:59:01.354962",
-      "type": "job_application",
-      "recipient": "careers@girnarsoft.com",
-      "company": "CarDekho / GirnarSoft",
-      "title": "Digital Growth & SEO Specialist"
-    },
-    {
-      "timestamp": "2026-11-23T16:59:01.354962",
-      "type": "client",
-      "recipient": "jaijinendradental@gmail.com",
-      "business": "Jai Jinendra Dental Hospital"
-    },
-    {
-      "timestamp": "2026-11-24T14:08:30.126958",
+      "timestamp": "2026-11-24T21:27:06.059898",
       "type": "job_application",
       "recipient": "sales@crinze.com",
       "company": "Crinze Technologies",
       "title": "Social Media Marketing & Content Specialist"
     },
     {
-      "timestamp": "2026-11-24T14:08:30.126958",
+      "timestamp": "2026-11-24T21:27:06.059898",
       "type": "client",
-      "recipient": "vaishalinagar@anytimefitness.in",
-      "business": "Anytime Fitness (Queens Road Branch)"
+      "recipient": "jaijinendradental@gmail.com",
+      "business": "Jai Jinendra Dental Hospital"
     }
   ],
   "sent_jobs": [
     "hr@techtail.in",
     "hiring@prohed.com",
-    "careers@girnarsoft.com",
     "sales@crinze.com"
   ],
   "notified_telegram": [
-    "lead-cityprop-ncr",
-    "job-office-jaipur-01",
-    "job-23nov-office-01",
-    "job-office-gurugram-01",
-    "lead-youdent-jaipur",
-    "lead-goldsgym-jaipur",
     "job-23nov-wfh-01",
-    "job-wfh-02",
-    "lead-sanjeevani-alwar",
-    "job-office-jaipur-03",
+    "lead-anytimefitness-vaishali-24nov",
+    "job-remote-scaleup-24nov",
+    "lead-goldsgym-jaipur",
+    "lead-jaijinendra-durgapura-24nov",
     "lead-anytimefitness-jaipur",
-    "lead-blallab-jaipur",
-    "lead-rathoreclasses-jaipur",
-    "job-wfh-03",
-    "job-office-jaipur-02",
-    "job-23nov-office-02",
-    "lead-skyearth-neemrana",
+    "lead-jaijinendra-jaipur",
+    "job-office-jaipur-01",
+    "lead-sohna-gym-gurgaon-24nov",
+    "remotive-2091177",
+    "job-23nov-office-01",
+    "lead-sanjeevani-alwar",
     "job-wfh-01",
-    "lead-jaijinendra-jaipur"
+    "lead-skyearth-neemrana",
+    "remotive-2091173",
+    "lead-youdent-jaipur",
+    "job-23nov-office-02",
+    "job-office-gurugram-01"
   ],
   "replied_contacts": [
     "no-reply@accounts.google.com",
-    "mailer-daemon@googlemail.com",
-    "no-reply@google.com"
+    "no-reply@google.com",
+    "mailer-daemon@googlemail.com"
   ]
 }
