@@ -2,7 +2,8 @@
   "sent_clients": [
     "dr.sharma.apexjaipur@gmail.com",
     "info@youdent.in",
-    "jaijinendradental@gmail.com"
+    "jaijinendradental@gmail.com",
+    "vaishalinagar@anytimefitness.in"
   ],
   "history": [
     {
@@ -43,30 +44,47 @@
       "type": "client",
       "recipient": "jaijinendradental@gmail.com",
       "business": "Jai Jinendra Dental Hospital"
+    },
+    {
+      "timestamp": "2026-11-24T14:08:30.126958",
+      "type": "job_application",
+      "recipient": "sales@crinze.com",
+      "company": "Crinze Technologies",
+      "title": "Social Media Marketing & Content Specialist"
+    },
+    {
+      "timestamp": "2026-11-24T14:08:30.126958",
+      "type": "client",
+      "recipient": "vaishalinagar@anytimefitness.in",
+      "business": "Anytime Fitness (Queens Road Branch)"
     }
   ],
   "sent_jobs": [
     "hr@techtail.in",
     "hiring@prohed.com",
-    "careers@girnarsoft.com"
+    "careers@girnarsoft.com",
+    "sales@crinze.com"
   ],
   "notified_telegram": [
-    "job-23nov-office-02",
-    "job-wfh-02",
-    "lead-skyearth-neemrana",
-    "job-23nov-wfh-01",
+    "lead-cityprop-ncr",
     "job-office-jaipur-01",
     "job-23nov-office-01",
-    "lead-rathoreclasses-jaipur",
-    "lead-sanjeevani-alwar",
-    "lead-jaijinendra-jaipur",
-    "lead-anytimefitness-jaipur",
-    "job-wfh-01",
-    "lead-youdent-jaipur",
-    "job-office-jaipur-02",
     "job-office-gurugram-01",
+    "lead-youdent-jaipur",
+    "lead-goldsgym-jaipur",
+    "job-23nov-wfh-01",
+    "job-wfh-02",
+    "lead-sanjeevani-alwar",
+    "job-office-jaipur-03",
+    "lead-anytimefitness-jaipur",
     "lead-blallab-jaipur",
-    "lead-goldsgym-jaipur"
+    "lead-rathoreclasses-jaipur",
+    "job-wfh-03",
+    "job-office-jaipur-02",
+    "job-23nov-office-02",
+    "lead-skyearth-neemrana",
+    "job-wfh-01",
+    "lead-jaijinendra-jaipur"
   ],
   "replied_contacts": [
     "no-reply@accounts.google.com",
