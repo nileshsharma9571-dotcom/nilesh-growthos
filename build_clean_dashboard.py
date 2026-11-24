@@ -1,42 +1,32 @@
 import json
 import os
-import datetime
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 LEADS_FILE = os.path.join(DATA_DIR, "leads.json")
 JOBS_FILE = os.path.join(DATA_DIR, "jobs.json")
 PROFILE_FILE = os.path.join(DATA_DIR, "profile.json")
-LOG_FILE = os.path.join(DATA_DIR, "outreach_log.json")
 DASHBOARD_FILE = os.path.join(BASE_DIR, "dashboard.html")
+INDEX_FILE = os.path.join(BASE_DIR, "index.html")
 
-def load_json(path, default):
-    if os.path.exists(path):
-        try:
-            with open(path, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except Exception:
-            return default
-    return default
+with open(LEADS_FILE, "r", encoding="utf-8") as f:
+    leads = json.load(f)
 
-leads = load_json(LEADS_FILE, [])
-jobs = load_json(JOBS_FILE, [])
-profile = load_json(PROFILE_FILE, {})
-outreach_log = load_json(LOG_FILE, {"sent_clients": [], "sent_jobs": [], "history": [], "followed_up": [], "replied_contacts": []})
+with open(JOBS_FILE, "r", encoding="utf-8") as f:
+    jobs = json.load(f)
 
 wfh_jobs = [j for j in jobs if j.get("job_category") == "WFH" or "Remote" in j.get("location", "")]
-office_jobs = [j for j in jobs if j.get("job_category") == "Office" or "Office" in j.get("type", "") or not ("Remote" in j.get("location", ""))]
+office_jobs = [j for j in jobs if j.get("job_category") == "Office" or "Office" in j.get("type", "")]
 
 leads_json_str = json.dumps(leads, indent=2, ensure_ascii=False)
 jobs_json_str = json.dumps(jobs, indent=2, ensure_ascii=False)
-log_json_str = json.dumps(outreach_log, indent=2, ensure_ascii=False)
 
 html_content = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GrowthOS Pro &bull; Nilesh Acharya (Digital Marketing Command Center)</title>
+  <title>GrowthOS Pro &bull; Nilesh Acharya (Digital Marketing Hub)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -65,7 +55,7 @@ html_content = f'''<!DOCTYPE html>
     }}
     .container {{ max-width: 1200px; margin: 0 auto; }}
 
-    /* Top Header */
+    /* Top Bar */
     header {{
       display: flex;
       flex-wrap: wrap;
@@ -109,7 +99,7 @@ html_content = f'''<!DOCTYPE html>
       padding: 6px 12px;
       border-radius: 9999px;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
     }}
     .badge-status::before {{
       content: '';
@@ -120,52 +110,44 @@ html_content = f'''<!DOCTYPE html>
       box-shadow: 0 0 8px #22c55e;
     }}
 
-    /* Metrics Grid */
+    /* Metrics Bar */
     .metrics-grid {{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }}
     .metric-card {{
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 12px;
-      padding: 16px;
-      position: relative;
-      overflow: hidden;
+      padding: 16px 18px;
     }}
-    .metric-card::after {{
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--accent), transparent);
-    }}
-    .metric-card .label {{ font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }}
-    .metric-card .val {{ font-size: 26px; font-weight: 800; color: #fff; margin: 4px 0 2px; }}
-    .metric-card .sub {{ font-size: 11.5px; color: var(--text-muted); }}
+    .metric-card .label {{ font-size: 11.5px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px; }}
+    .metric-card .val {{ font-size: 26px; font-weight: 800; color: #fff; margin-top: 4px; }}
+    .metric-card .sub {{ font-size: 11.5px; color: var(--accent); margin-top: 3px; }}
 
-    /* Navigation Tabs */
+    /* Tabs */
     .nav-tabs {{
       display: flex;
       gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 6px;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       border-bottom: 1px solid var(--card-border);
+      padding-bottom: 8px;
+      overflow-x: auto;
     }}
     .tab-btn {{
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
+      background: transparent;
+      border: 1px solid transparent;
       color: var(--text-muted);
-      padding: 10px 18px;
-      border-radius: 9px;
       font-size: 13.5px;
-      font-weight: 600;
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: 8px;
       cursor: pointer;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       white-space: nowrap;
       transition: all 0.2s;
     }}
@@ -269,183 +251,153 @@ html_content = f'''<!DOCTYPE html>
       display: flex;
       flex-direction: column;
       gap: 8px;
+      font-size: 12.5px;
     }}
-    .audit-problem {{ font-size: 12.5px; color: #fca5a5; line-height: 1.4; }}
-    .audit-solution {{ font-size: 12.5px; color: #86efac; line-height: 1.4; }}
+    .audit-problem {{ color: #fb923c; line-height: 1.45; }}
+    .audit-solution {{ color: #7dd3fc; line-height: 1.45; }}
 
     .pitch-box {{
-      background: #0f172a;
+      background: #070c16;
       border: 1px solid #1e293b;
       border-radius: 10px;
-      padding: 12px;
-      position: relative;
+      overflow: hidden;
     }}
     .pitch-head {{
+      background: #0f172a;
+      padding: 8px 12px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 11px;
-      font-weight: 700;
-      color: #94a3b8;
-      text-transform: uppercase;
-      margin-bottom: 6px;
+      border-bottom: 1px solid #1e293b;
+    }}
+    .pitch-head span {{ font-size: 11.5px; font-weight: 700; text-transform: uppercase; color: var(--accent); }}
+    .btn-copy-action {{
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
     }}
     .pitch-text {{
+      padding: 12px;
       font-size: 12px;
+      line-height: 1.55;
       color: #cbd5e1;
-      line-height: 1.5;
-      max-height: 85px;
+      max-height: 130px;
       overflow-y: auto;
       white-space: pre-wrap;
-      word-break: break-word;
     }}
 
     .card-btns {{
       display: flex;
-      flex-wrap: wrap;
       gap: 8px;
-      margin-top: 4px;
+      flex-wrap: wrap;
     }}
     .btn {{
-      padding: 9px 14px;
+      flex: 1;
+      min-width: 120px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 12px;
       border-radius: 8px;
       font-size: 12.5px;
       font-weight: 700;
       text-decoration: none;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
       border: none;
       transition: all 0.15s;
     }}
-    .btn-wa {{
-      background: #15803d;
-      color: #fff;
-    }}
+    .btn-wa {{ background: #22c55e; color: #fff; }}
     .btn-wa:hover {{ background: #16a34a; }}
-    .btn-call {{
-      background: #0369a1;
-      color: #fff;
-    }}
-    .btn-call:hover {{ background: #0284c7; }}
-    .btn-apply {{
-      background: linear-gradient(135deg, #0284c7, #2563eb);
-      color: #fff;
-      flex: 1;
-      justify-content: center;
-    }}
-    .btn-apply:hover {{ opacity: 0.92; }}
+    .btn-call {{ background: #334155; color: #fff; flex: 0 0 auto; min-width: auto; padding: 10px 14px; }}
+    .btn-call:hover {{ background: #475569; }}
+    .btn-apply {{ background: #0284c7; color: #fff; }}
+    .btn-apply:hover {{ background: #0369a1; }}
     .btn-outline {{
       background: transparent;
-      border: 1px solid var(--card-border);
-      color: var(--text-muted);
+      color: #cbd5e1;
+      border: 1px solid #334155;
+      flex: 0 0 auto;
+      min-width: auto;
+      padding: 10px 12px;
     }}
     .btn-outline:hover {{ background: #1e293b; color: #fff; }}
-    .btn-copy-action {{
-      cursor: pointer;
-      color: var(--accent);
-      font-size: 11px;
-      text-decoration: underline;
-    }}
-
-    /* Activity Log Table */
-    .log-section {{
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 24px;
-    }}
-    .log-table {{
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 14px;
-      font-size: 13px;
-    }}
-    .log-table th, .log-table td {{
-      padding: 12px 14px;
-      text-align: left;
-      border-bottom: 1px solid var(--card-border);
-    }}
-    .log-table th {{
-      color: var(--text-muted);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }}
-    .log-table tr:hover td {{ background: rgba(255,255,255,0.02); }}
 
     /* Resume Section */
     .resume-section {{
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 14px;
+      border-radius: 16px;
       padding: 24px;
     }}
     .resume-header {{
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
       gap: 16px;
-      padding-bottom: 20px;
       border-bottom: 1px solid var(--card-border);
-      margin-bottom: 20px;
+      padding-bottom: 20px;
+      margin-bottom: 22px;
     }}
     .resume-grid {{
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 2fr 1fr;
       gap: 24px;
     }}
-    @media (max-width: 768px) {{
+    @media (max-width: 800px) {{
       .resume-grid {{ grid-template-columns: 1fr; }}
     }}
     .resume-card {{
       background: var(--card-inner);
-      border: 1px solid var(--card-border);
-      border-radius: 10px;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
       padding: 18px;
       margin-bottom: 16px;
     }}
     .resume-card h3 {{
-      font-size: 14.5px;
+      font-size: 15px;
       font-weight: 800;
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 0.5px;
       margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 6px;
     }}
-    .exp-item {{ margin-bottom: 14px; }}
-    .exp-title {{ font-size: 14px; font-weight: 700; color: #fff; }}
-    .exp-sub {{ font-size: 12px; color: var(--text-muted); margin: 2px 0 6px; }}
-    .exp-desc {{ font-size: 12.5px; color: #cbd5e1; line-height: 1.5; }}
+    .exp-item {{
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed #1e293b;
+    }}
+    .exp-item:last-child {{ border-bottom: none; margin-bottom: 0; padding-bottom: 0; }}
+    .exp-title {{ font-size: 14.5px; font-weight: 700; color: #fff; }}
+    .exp-sub {{ font-size: 12px; color: var(--text-muted); margin: 3px 0 6px; }}
+    .exp-desc {{ font-size: 12.5px; color: #cbd5e1; line-height: 1.45; }}
     .cert-pill {{
       display: inline-block;
-      background: rgba(34, 197, 94, 0.1);
-      border: 1px solid rgba(34, 197, 94, 0.25);
-      color: #86efac;
-      padding: 4px 10px;
-      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: #7dd3fc;
       font-size: 12px;
-      margin: 3px 3px 3px 0;
+      padding: 5px 10px;
+      border-radius: 6px;
+      margin: 4px;
+      font-weight: 600;
     }}
 
     .hidden {{ display: none !important; }}
-
     .toast {{
       position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: #0284c7;
+      bottom: 20px;
+      right: 20px;
+      background: #22c55e;
       color: #fff;
       padding: 12px 20px;
-      border-radius: 10px;
-      font-size: 13.5px;
-      font-weight: 600;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      border-radius: 8px;
+      font-weight: 700;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.6);
       display: none;
       z-index: 1000;
     }}
@@ -463,9 +415,9 @@ html_content = f'''<!DOCTYPE html>
         </div>
       </div>
       <div class="header-actions">
-        <span class="badge-status">24/7 Cloud Automation Active</span>
+        <span class="badge-status">Hourly Drip Engine Active</span>
         <a href="data/Nilesh_Acharya_Resume.pdf" target="_blank" class="btn btn-outline" style="font-size:12px; padding:6px 12px;">
-          &#128196; Download Verified PDF Resume
+          &#128196; Download PDF Resume
         </a>
       </div>
     </header>
@@ -475,12 +427,12 @@ html_content = f'''<!DOCTYPE html>
       <div class="metric-card">
         <div class="label">Review Gap Leads</div>
         <div class="val">{len(leads)}</div>
-        <div class="sub">Dental, Clinics, Gyms, Real Estate (Jaipur, Alwar, NCR)</div>
+        <div class="sub">Clinics, Gyms, Coaching (Jaipur, Alwar, Gurgaon)</div>
       </div>
       <div class="metric-card">
         <div class="label">WFH Remote Jobs</div>
         <div class="val">{len(wfh_jobs)}</div>
-        <div class="sub">95%+ Match (All-India Work From Home)</div>
+        <div class="sub">90%+ Match (All-India Work From Home)</div>
       </div>
       <div class="metric-card">
         <div class="label">Nearby Office Jobs</div>
@@ -489,15 +441,15 @@ html_content = f'''<!DOCTYPE html>
       </div>
       <div class="metric-card">
         <div class="label">Top Match Score</div>
-        <div class="val" style="color: #4ade80;">97%</div>
-        <div class="sub">9x Google Ads &amp; Semrush SEO Verified</div>
+        <div class="val" style="color: #4ade80;">96%</div>
+        <div class="sub">80%+ Minimum Cutoff Verified</div>
       </div>
     </div>
 
     <!-- Navigation Tabs -->
     <div class="nav-tabs">
       <button class="tab-btn active" id="btn-tab-leads" onclick="switchTab('leads')">
-        <span>&#128188; Client Leads (Review Gaps &amp; Pitches)</span>
+        <span>&#128188; Client Leads (Review Gap &amp; Pitches)</span>
         <span class="badge-count" id="tab-lead-count">{len(leads)}</span>
       </button>
       <button class="tab-btn" id="btn-tab-wfh" onclick="switchTab('wfh')">
@@ -507,10 +459,6 @@ html_content = f'''<!DOCTYPE html>
       <button class="tab-btn" id="btn-tab-office" onclick="switchTab('office')">
         <span>&#127970; Nearby Office Jobs (Jaipur/NCR)</span>
         <span class="badge-count" id="tab-office-count">{len(office_jobs)}</span>
-      </button>
-      <button class="tab-btn" id="btn-tab-activity" onclick="switchTab('activity')">
-        <span>&#128225; Activity &amp; Outreach Tracker</span>
-        <span class="badge-count" id="tab-activity-count">{len(outreach_log.get("history", []))}</span>
       </button>
       <button class="tab-btn" id="btn-tab-resume" onclick="switchTab('resume')">
         <span>&#128196; My Profile &amp; Verified Resume</span>
@@ -538,37 +486,6 @@ html_content = f'''<!DOCTYPE html>
 
     <!-- Office Jobs Container -->
     <div id="office-container" class="cards-grid hidden"></div>
-
-    <!-- Activity Tracker Container -->
-    <div id="activity-container" class="log-section hidden">
-      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-        <div>
-          <h2 style="font-size:18px; font-weight:800; color:#fff;">24/7 Outreach &amp; Application Log</h2>
-          <p style="font-size:12.5px; color:var(--text-muted); margin-top:2px;">
-            Dual Gmail Drip Engine &bull; Job Email: <strong>nileshsharma3011@gmail.com</strong> &bull; Client Email: <strong>nileshsharma.digitalgrowth@gmail.com</strong>
-          </p>
-        </div>
-        <div style="font-size:12px; color:#4ade80; background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.25); padding:6px 12px; border-radius:8px;">
-          &#9989; Automated 3-Day Follow-Up Engine Active
-        </div>
-      </div>
-
-      <div style="overflow-x:auto;">
-        <table class="log-table">
-          <thead>
-            <tr>
-              <th>Timestamp</th>
-              <th>Channel</th>
-              <th>Entity</th>
-              <th>Recipient</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody id="log-tbody">
-          </tbody>
-        </table>
-      </div>
-    </div>
 
     <!-- Resume Section -->
     <div id="resume-container" class="resume-section hidden">
@@ -653,20 +570,14 @@ html_content = f'''<!DOCTYPE html>
 {jobs_json_str}
   </script>
 
-  <script id="log-json" type="application/json">
-{log_json_str}
-  </script>
-
   <script>
     let leadsData = [];
     let jobsData = [];
-    let logData = {{}};
     let currentTab = 'leads';
 
     try {{
       leadsData = JSON.parse(document.getElementById('leads-json').textContent.trim());
       jobsData = JSON.parse(document.getElementById('jobs-json').textContent.trim());
-      logData = JSON.parse(document.getElementById('log-json').textContent.trim());
     }} catch (err) {{
       console.error('Error parsing data JSON:', err);
     }}
@@ -691,7 +602,7 @@ html_content = f'''<!DOCTYPE html>
               </div>
               <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
                 <span class="tag tag-orange">${{escapeHtml(l.batch_time || '09:00 AM')}}</span>
-                <span class="tag ${{l.status === 'Shortlisted' ? 'tag-purple' : 'tag-blue'}}">${{escapeHtml(l.status || 'Verified')}}</span>
+                <span class="tag ${{l.status === 'Shortlisted' ? 'tag-purple' : 'tag-blue'}}">${{escapeHtml(l.status || 'New')}}</span>
               </div>
             </div>
 
@@ -784,48 +695,20 @@ html_content = f'''<!DOCTYPE html>
       `).join('');
     }}
 
-    function renderActivityLog() {{
-      const tbody = document.getElementById('log-tbody');
-      const history = (logData && logData.history) ? logData.history : [];
-      if (history.length === 0) {{
-        tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:var(--text-muted); padding:30px;">No automated dispatches logged yet.</td></tr>`;
-        return;
-      }}
-      tbody.innerHTML = history.slice().reverse().map(h => {{
-        const isJob = h.type === 'job_application' || h.type === 'job';
-        const typeBadge = isJob ? '<span class="tag tag-blue">Job Application</span>' : '<span class="tag tag-green">Client Outreach</span>';
-        const dateStr = h.timestamp ? new Date(h.timestamp).toLocaleString('en-IN', {{ month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }}) : 'Recent';
-        const entity = h.company || h.business || '-';
-        return `
-          <tr>
-            <td style="color:var(--text-muted); font-size:12px;">${{dateStr}}</td>
-            <td>${{typeBadge}}</td>
-            <td><strong>${{escapeHtml(entity)}}</strong></td>
-            <td style="color:#38bdf8;">${{escapeHtml(h.recipient || '')}}</td>
-            <td><span class="tag tag-green">&#10003; Delivered</span></td>
-          </tr>
-        `;
-      }}).join('');
-    }}
-
     function switchTab(tab) {{
       currentTab = tab;
       document.getElementById('btn-tab-leads').classList.toggle('active', tab === 'leads');
       document.getElementById('btn-tab-wfh').classList.toggle('active', tab === 'wfh');
       document.getElementById('btn-tab-office').classList.toggle('active', tab === 'office');
-      document.getElementById('btn-tab-activity').classList.toggle('active', tab === 'activity');
       document.getElementById('btn-tab-resume').classList.toggle('active', tab === 'resume');
 
       document.getElementById('leads-container').classList.toggle('hidden', tab !== 'leads');
       document.getElementById('wfh-container').classList.toggle('hidden', tab !== 'wfh');
       document.getElementById('office-container').classList.toggle('hidden', tab !== 'office');
-      document.getElementById('activity-container').classList.toggle('hidden', tab !== 'activity');
       document.getElementById('resume-container').classList.toggle('hidden', tab !== 'resume');
-      document.getElementById('controls-bar').classList.toggle('hidden', tab === 'resume' || tab === 'activity');
+      document.getElementById('controls-bar').classList.toggle('hidden', tab === 'resume');
 
-      if (tab === 'activity') {{
-        renderActivityLog();
-      }} else if (tab !== 'resume') {{
+      if (tab !== 'resume') {{
         filterData();
       }}
     }}
@@ -900,7 +783,6 @@ html_content = f'''<!DOCTYPE html>
     renderLeads(leadsData);
     renderJobCards('wfh-container', jobsData.filter(j => j.job_category === 'WFH' || (j.location || '').includes('Remote')));
     renderJobCards('office-container', jobsData.filter(j => j.job_category === 'Office' || !(j.location || '').includes('Remote')));
-    renderActivityLog();
   </script>
 </body>
 </html>
@@ -909,8 +791,7 @@ html_content = f'''<!DOCTYPE html>
 with open(DASHBOARD_FILE, "w", encoding="utf-8") as f:
     f.write(html_content)
 
-idx_path = os.path.join(BASE_DIR, "index.html")
-with open(idx_path, "w", encoding="utf-8") as f:
+with open(INDEX_FILE, "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print("[OK] Rebuilt dashboard.html and index.html successfully!")
+print("Pro segregated dashboard (dashboard.html & index.html) generated successfully!")
