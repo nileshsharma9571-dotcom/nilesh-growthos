@@ -2,8 +2,7 @@
   "sent_clients": [
     "dr.sharma.apexjaipur@gmail.com",
     "info@youdent.in",
-    "jaijinendradental@gmail.com",
-    "jaipur@allen.in"
+    "jaijinendradental@gmail.com"
   ],
   "history": [
     {
@@ -44,52 +43,32 @@
       "type": "client",
       "recipient": "jaijinendradental@gmail.com",
       "business": "Jai Jinendra Dental Hospital"
-    },
-    {
-      "timestamp": "2026-11-24T16:32:31.526206",
-      "type": "job_application",
-      "recipient": "careers@girnarsoft.com",
-      "company": "CarDekho / GirnarSoft",
-      "title": "Digital Growth & SEO Specialist"
-    },
-    {
-      "timestamp": "2026-11-24T16:32:31.526206",
-      "type": "client",
-      "recipient": "jaipur@allen.in",
-      "business": "Allen Career Institute (Gopalpura Campus)"
     }
   ],
   "sent_jobs": [
     "hr@techtail.in",
     "hiring@prohed.com",
-    "sales@crinze.com",
-    "careers@girnarsoft.com"
+    "sales@crinze.com"
   ],
   "notified_telegram": [
-    "job-wfh-01",
-    "lead-allen-gopalpura-24nov",
-    "job-office-gurugram-01",
-    "lead-kotputli-diagnostics-24nov",
-    "lead-skyearth-neemrana",
-    "lead-goldsgym-jaipur",
-    "remotive-2091173",
-    "lead-sohna-gym-gurgaon-24nov",
-    "lead-anytimefitness-vaishali-24nov",
-    "lead-sanjeevani-alwar",
-    "job-23nov-office-01",
-    "job-tt-jaipur-24nov",
-    "job-remote-socialgrowth-24nov",
-    "job-23nov-office-02",
-    "lead-jaijinendra-jaipur",
-    "lead-anytimefitness-jaipur",
-    "lead-jaijinendra-durgapura-24nov",
-    "remotive-2091177",
     "job-23nov-wfh-01",
-    "job-office-jaipur-01",
-    "lead-youdent-mansarovar-24nov",
+    "lead-anytimefitness-vaishali-24nov",
     "job-remote-scaleup-24nov",
+    "lead-goldsgym-jaipur",
+    "lead-jaijinendra-durgapura-24nov",
+    "lead-anytimefitness-jaipur",
+    "lead-jaijinendra-jaipur",
+    "job-office-jaipur-01",
+    "lead-sohna-gym-gurgaon-24nov",
+    "remotive-2091177",
+    "job-23nov-office-01",
+    "lead-sanjeevani-alwar",
+    "job-wfh-01",
+    "lead-skyearth-neemrana",
+    "remotive-2091173",
     "lead-youdent-jaipur",
-    "remotive-2091166"
+    "job-23nov-office-02",
+    "job-office-gurugram-01"
   ],
   "replied_contacts": [
     "no-reply@accounts.google.com",
