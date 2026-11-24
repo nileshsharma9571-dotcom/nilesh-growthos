@@ -2,9 +2,9 @@ name: GrowthOS 24x7 Cloud Dispatcher
 
 on:
   schedule:
-    # Runs Monday to Saturday every 2 hours from 03:30 UTC to 13:30 UTC (09:00 AM to 07:00 PM IST)
-    - cron: '30 3,5,7,9,11,13 * * 1-6'
-  workflow_dispatch: # Allows manual trigger from GitHub UI anytime
+    # Runs every hour from 03:30 UTC to 14:30 UTC (09:00 AM to 08:00 PM IST) daily
+    - cron: '30 3-14 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI / API anytime
 
 permissions:
   contents: write
@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run 24x7 Growth Engine & Drip Matcher
+      - name: Run 24x7 Growth Engine
         env:
           JOB_EMAIL: ${{ secrets.JOB_EMAIL }}
           JOB_APP_PASS: ${{ secrets.JOB_APP_PASS }}
@@ -33,7 +33,6 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           python cloud_growth_engine.py
-          python follow_up_engine.py
 
       - name: Commit Updated Dashboard & Logs
         run: |
@@ -41,15 +40,3 @@ jobs:
           git config --global user.email "bot@growthos.cloud"
           git add index.html dashboard.html data/
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore: automated daily fresh jobs, leads & dashboard [skip ci]" && git push)
-
-      - name: Notify Telegram on Workflow Failure
-        if: failure()
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: |
-          if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
-            curl -4 -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-              -d "chat_id=${TELEGRAM_CHAT_ID}" \
-              --data-urlencode "text=⚠️ [GROWTHOS ALERT] Cloud Workflow Run Failed! Check GitHub Actions logs." || true
-          fi
