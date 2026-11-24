@@ -2,7 +2,8 @@
   "sent_clients": [
     "dr.sharma.apexjaipur@gmail.com",
     "info@youdent.in",
-    "jaijinendradental@gmail.com"
+    "jaijinendradental@gmail.com",
+    "jaipur@allen.in"
   ],
   "history": [
     {
@@ -43,36 +44,57 @@
       "type": "client",
       "recipient": "jaijinendradental@gmail.com",
       "business": "Jai Jinendra Dental Hospital"
+    },
+    {
+      "timestamp": "2026-11-24T16:48:07.026242",
+      "type": "job_application",
+      "recipient": "hr@prohed.com",
+      "company": "PROHED Digital Solutions",
+      "title": "PPC & Performance Marketing Executive"
+    },
+    {
+      "timestamp": "2026-11-24T16:48:07.026242",
+      "type": "client",
+      "recipient": "jaipur@allen.in",
+      "business": "Allen Career Institute (Gopalpura Campus)"
     }
   ],
   "sent_jobs": [
     "hr@techtail.in",
     "hiring@prohed.com",
-    "sales@crinze.com"
+    "sales@crinze.com",
+    "hr@prohed.com"
   ],
   "notified_telegram": [
-    "job-23nov-wfh-01",
-    "lead-anytimefitness-vaishali-24nov",
-    "job-remote-scaleup-24nov",
-    "lead-goldsgym-jaipur",
+    "lead-alwartownship-alwar-24nov",
     "lead-jaijinendra-durgapura-24nov",
-    "lead-anytimefitness-jaipur",
-    "lead-jaijinendra-jaipur",
-    "job-office-jaipur-01",
-    "lead-sohna-gym-gurgaon-24nov",
     "remotive-2091177",
-    "job-23nov-office-01",
-    "lead-sanjeevani-alwar",
     "job-wfh-01",
     "lead-skyearth-neemrana",
-    "remotive-2091173",
+    "lead-kotputli-diagnostics-24nov",
     "lead-youdent-jaipur",
+    "job-vervelogic-jaipur-24nov",
+    "lead-anytimefitness-jaipur",
+    "remotive-2091173",
+    "lead-sohna-gym-gurgaon-24nov",
+    "job-office-jaipur-01",
+    "lead-sanjeevani-alwar",
+    "lead-jaijinendra-jaipur",
+    "job-prohed-gurugram-24nov",
+    "job-remote-scaleup-24nov",
     "job-23nov-office-02",
-    "job-office-gurugram-01"
+    "job-office-gurugram-01",
+    "remotive-2091166",
+    "lead-allen-gopalpura-24nov",
+    "job-23nov-wfh-01",
+    "job-23nov-office-01",
+    "lead-goldsgym-jaipur",
+    "lead-anytimefitness-vaishali-24nov"
   ],
   "replied_contacts": [
     "no-reply@accounts.google.com",
     "no-reply@google.com",
-    "mailer-daemon@googlemail.com"
+    "mailer-daemon@googlemail.com",
+    "postmaster@ashianahousing.com"
   ]
 }
