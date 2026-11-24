@@ -2,7 +2,8 @@
   "sent_clients": [
     "dr.sharma.apexjaipur@gmail.com",
     "info@youdent.in",
-    "jaijinendradental@gmail.com"
+    "jaijinendradental@gmail.com",
+    "sales@ashianahousing.com"
   ],
   "history": [
     {
@@ -43,32 +44,52 @@
       "type": "client",
       "recipient": "jaijinendradental@gmail.com",
       "business": "Jai Jinendra Dental Hospital"
+    },
+    {
+      "timestamp": "2026-11-24T16:40:33.936656",
+      "type": "job_application",
+      "recipient": "careers@girnarsoft.com",
+      "company": "CarDekho / GirnarSoft",
+      "title": "Digital Growth & SEO Specialist"
+    },
+    {
+      "timestamp": "2026-11-24T16:40:33.936656",
+      "type": "client",
+      "recipient": "sales@ashianahousing.com",
+      "business": "Ashiana Townships & Real Estate"
     }
   ],
   "sent_jobs": [
     "hr@techtail.in",
     "hiring@prohed.com",
-    "sales@crinze.com"
+    "sales@crinze.com",
+    "careers@girnarsoft.com"
   ],
   "notified_telegram": [
-    "job-23nov-wfh-01",
-    "lead-anytimefitness-vaishali-24nov",
-    "job-remote-scaleup-24nov",
-    "lead-goldsgym-jaipur",
-    "lead-jaijinendra-durgapura-24nov",
-    "lead-anytimefitness-jaipur",
-    "lead-jaijinendra-jaipur",
-    "job-office-jaipur-01",
-    "lead-sohna-gym-gurgaon-24nov",
-    "remotive-2091177",
-    "job-23nov-office-01",
-    "lead-sanjeevani-alwar",
     "job-wfh-01",
-    "lead-skyearth-neemrana",
-    "remotive-2091173",
+    "lead-jaijinendra-durgapura-24nov",
     "lead-youdent-jaipur",
+    "job-remote-scaleup-24nov",
+    "job-tt-jaipur-24nov",
     "job-23nov-office-02",
-    "job-office-gurugram-01"
+    "lead-anytimefitness-vaishali-24nov",
+    "lead-sanjeevani-alwar",
+    "job-23nov-office-01",
+    "job-remote-b2blead-24nov",
+    "job-23nov-wfh-01",
+    "lead-goldsgym-jaipur",
+    "job-office-jaipur-01",
+    "lead-anytimefitness-jaipur",
+    "remotive-2091166",
+    "job-office-gurugram-01",
+    "lead-skyearth-neemrana",
+    "lead-sohna-gym-gurgaon-24nov",
+    "lead-jaijinendra-jaipur",
+    "remotive-2091177",
+    "lead-allen-gopalpura-24nov",
+    "lead-alwartownship-alwar-24nov",
+    "remotive-2091173",
+    "lead-kotputli-diagnostics-24nov"
   ],
   "replied_contacts": [
     "no-reply@accounts.google.com",
