@@ -35,8 +35,10 @@ jobs:
           python cloud_growth_engine.py
 
       - name: Commit Updated Dashboard & Logs
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          git config --global user.name "GrowthOS Cloud Bot"
-          git config --global user.email "bot@growthos.cloud"
+          git config --global user.name "Nilesh Sharma"
+          git config --global user.email "nileshsharma9571@gmail.com"
           git add index.html dashboard.html data/
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: automated daily fresh jobs, leads & dashboard [skip ci]" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: automated daily fresh jobs, leads & dashboard [skip ci]" && git push https://x-access-token:${GH_PAT}@github.com/nileshsharma9571-dotcom/nilesh-growthos.git main)
