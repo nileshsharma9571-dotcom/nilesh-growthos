@@ -4,7 +4,8 @@
     "info@youdent.in",
     "jaijinendradental@gmail.com",
     "jaipur@allen.in",
-    "sales@ashianahousing.com"
+    "sales@ashianahousing.com",
+    "vaishalinagar@anytimefitness.in"
   ],
   "history": [
     {
@@ -71,6 +72,19 @@
       "type": "client",
       "recipient": "sales@ashianahousing.com",
       "business": "Ashiana Townships & Real Estate"
+    },
+    {
+      "timestamp": "2026-11-25T22:39:42.383708",
+      "type": "job_application",
+      "recipient": "careers@adglobal360.com",
+      "company": "AdGlobal360 India",
+      "title": "Google Ads & PPC Campaign Associate"
+    },
+    {
+      "timestamp": "2026-11-25T22:39:42.383708",
+      "type": "client",
+      "recipient": "vaishalinagar@anytimefitness.in",
+      "business": "Anytime Fitness (Queens Road Branch)"
     }
   ],
   "sent_jobs": [
@@ -78,39 +92,46 @@
     "hiring@prohed.com",
     "sales@crinze.com",
     "hr@prohed.com",
-    "career@vervelogic.com"
+    "career@vervelogic.com",
+    "careers@adglobal360.com"
   ],
   "notified_telegram": [
-    "lead-anytimefitness-vaishali-24nov",
-    "lead-sanjeevani-alwar",
-    "job-prohed-gurugram-25nov",
-    "lead-skyearth-neemrana",
-    "lead-goldsgym-jaipur",
-    "lead-sohna-gym-gurgaon-24nov",
-    "job-office-gurugram-01",
-    "job-23nov-office-01",
-    "lead-jaijinendra-durgapura-24nov",
-    "lead-alwartownship-alwar-24nov",
-    "lead-kotputli-diagnostics-24nov",
-    "job-vervelogic-jaipur-24nov",
-    "job-wfh-01",
-    "lead-youdent-jaipur",
-    "remotive-2091173",
-    "job-23nov-wfh-01",
     "job-tt-jaipur-25nov",
-    "job-office-jaipur-01",
-    "job-remote-scaleup-24nov",
-    "job-remote-growthx-25nov",
-    "lead-anytimefitness-jaipur",
-    "lead-jaijinendra-jaipur",
+    "job-23nov-office-01",
+    "lead-anytimefitness-vaishali-24nov",
     "lead-allen-gopalpura-24nov",
-    "lead-jaijinendra-durgapura-25nov",
-    "remotive-2091177",
-    "job-23nov-office-02",
-    "remotive-2091166",
+    "job-remote-scaleup-24nov",
+    "job-digitalorix-jaipur-25nov",
+    "lead-allen-gopalpura-25nov",
     "lead-kotputli-diagnostics-25nov",
+    "remotive-2091173",
+    "remotive-2091166",
+    "lead-youdent-mansarovar-25nov",
+    "lead-anytimefitness-jaipur",
+    "lead-youdent-jaipur",
+    "lead-jaijinendra-durgapura-24nov",
+    "job-office-jaipur-01",
+    "job-prohed-gurugram-25nov",
+    "lead-sohna-gym-gurgaon-24nov",
+    "lead-jaijinendra-jaipur",
+    "lead-anytimefitness-vaishali-25nov",
+    "lead-goldsgym-jaipur",
+    "job-23nov-office-02",
+    "lead-alwartownship-alwar-24nov",
+    "remotive-2091177",
+    "job-crinze-jaipur-25nov",
+    "job-prohed-gurugram-24nov",
+    "lead-jaijinendra-durgapura-25nov",
+    "job-office-gurugram-01",
+    "job-wfh-01",
+    "job-23nov-wfh-01",
+    "job-adglobal-gurgaon-25nov",
+    "lead-sanjeevani-alwar",
+    "job-vervelogic-jaipur-24nov",
+    "lead-kotputli-diagnostics-24nov",
     "lead-alwartownship-alwar-25nov",
-    "job-prohed-gurugram-24nov"
+    "lead-skyearth-neemrana",
+    "job-remote-growthx-25nov"
   ],
   "replied_contacts": [
     "no-reply@accounts.google.com",
