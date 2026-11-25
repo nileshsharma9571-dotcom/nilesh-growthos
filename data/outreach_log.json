@@ -3,7 +3,8 @@
     "dr.sharma.apexjaipur@gmail.com",
     "info@youdent.in",
     "jaijinendradental@gmail.com",
-    "jaipur@allen.in"
+    "jaipur@allen.in",
+    "sales@ashianahousing.com"
   ],
   "history": [
     {
@@ -57,44 +58,67 @@
       "type": "client",
       "recipient": "jaipur@allen.in",
       "business": "Allen Career Institute (Gopalpura Campus)"
+    },
+    {
+      "timestamp": "2026-11-25T13:20:49.005776",
+      "type": "job_application",
+      "recipient": "career@vervelogic.com",
+      "company": "VerveLogic LLC",
+      "title": "Digital Growth Strategist & Campaign Lead"
+    },
+    {
+      "timestamp": "2026-11-25T13:20:49.005776",
+      "type": "client",
+      "recipient": "sales@ashianahousing.com",
+      "business": "Ashiana Townships & Real Estate"
     }
   ],
   "sent_jobs": [
     "hr@techtail.in",
     "hiring@prohed.com",
     "sales@crinze.com",
-    "hr@prohed.com"
+    "hr@prohed.com",
+    "career@vervelogic.com"
   ],
   "notified_telegram": [
-    "lead-alwartownship-alwar-24nov",
-    "lead-jaijinendra-durgapura-24nov",
-    "remotive-2091177",
-    "job-wfh-01",
-    "lead-skyearth-neemrana",
-    "lead-kotputli-diagnostics-24nov",
-    "lead-youdent-jaipur",
-    "job-vervelogic-jaipur-24nov",
-    "lead-anytimefitness-jaipur",
-    "remotive-2091173",
-    "lead-sohna-gym-gurgaon-24nov",
-    "job-office-jaipur-01",
+    "lead-anytimefitness-vaishali-24nov",
     "lead-sanjeevani-alwar",
-    "lead-jaijinendra-jaipur",
-    "job-prohed-gurugram-24nov",
-    "job-remote-scaleup-24nov",
-    "job-23nov-office-02",
-    "job-office-gurugram-01",
-    "remotive-2091166",
-    "lead-allen-gopalpura-24nov",
-    "job-23nov-wfh-01",
-    "job-23nov-office-01",
+    "job-prohed-gurugram-25nov",
+    "lead-skyearth-neemrana",
     "lead-goldsgym-jaipur",
-    "lead-anytimefitness-vaishali-24nov"
+    "lead-sohna-gym-gurgaon-24nov",
+    "job-office-gurugram-01",
+    "job-23nov-office-01",
+    "lead-jaijinendra-durgapura-24nov",
+    "lead-alwartownship-alwar-24nov",
+    "lead-kotputli-diagnostics-24nov",
+    "job-vervelogic-jaipur-24nov",
+    "job-wfh-01",
+    "lead-youdent-jaipur",
+    "remotive-2091173",
+    "job-23nov-wfh-01",
+    "job-tt-jaipur-25nov",
+    "job-office-jaipur-01",
+    "job-remote-scaleup-24nov",
+    "job-remote-growthx-25nov",
+    "lead-anytimefitness-jaipur",
+    "lead-jaijinendra-jaipur",
+    "lead-allen-gopalpura-24nov",
+    "lead-jaijinendra-durgapura-25nov",
+    "remotive-2091177",
+    "job-23nov-office-02",
+    "remotive-2091166",
+    "lead-kotputli-diagnostics-25nov",
+    "lead-alwartownship-alwar-25nov",
+    "job-prohed-gurugram-24nov"
   ],
   "replied_contacts": [
     "no-reply@accounts.google.com",
     "no-reply@google.com",
     "mailer-daemon@googlemail.com",
     "postmaster@ashianahousing.com"
+  ],
+  "followed_up": [
+    "dr.sharma.apexjaipur@gmail.com"
   ]
 }
