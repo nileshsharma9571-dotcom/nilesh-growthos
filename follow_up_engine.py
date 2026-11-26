@@ -70,7 +70,7 @@ def check_incoming_replies(user_email, app_password):
                             sender_raw = line[5:].strip()
                             emails_found = re.findall(r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+', sender_raw)
                             system_domains = {"google.com", "googlemail.com", "gmail.com", "github.com", "telegram.org"}
-                            system_prefixes = ("no-reply", "noreply", "mailer-daemon", "notification", "security")
+                            system_prefixes = ("no-reply", "noreply", "mailer-daemon", "postmaster", "notification", "security")
                             for em in emails_found:
                                 em_lower = em.lower()
                                 em_user = em_lower.split("@")[0]
@@ -125,7 +125,7 @@ def process_day3_follow_ups():
             continue
 
         try:
-            sent_time = datetime.datetime.fromisoformat(timestamp_str)
+            sent_time = datetime.datetime.fromisoformat(timestamp_str).replace(tzinfo=None)
             days_passed = (now - sent_time).days
 
             # Send Day 3 follow-up
