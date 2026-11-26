@@ -626,8 +626,8 @@ html_content = f'''<!DOCTYPE html>
           </div>
 
           <div class="card-btns">
-            ${{l.wa_link ? `<a href="${{l.wa_link}}" target="_blank" class="btn btn-wa" title="Open 1-Click WhatsApp Chat">&#128172; 1-Click WhatsApp</a>` : ''}}
-            <a href="tel:${{escapeHtml(l.phone || '').replace(/[^0-9]/g, '')}}" class="btn btn-call" title="Call Business Directly">
+            ${{(l.wa_verified && l.wa_link) ? `<a href="${{l.wa_link}}" target="_blank" class="btn btn-wa" title="Open Verified 1-Click WhatsApp Chat">&#128172; 1-Click WhatsApp</a>` : ''}}
+            <a href="tel:${{escapeHtml(l.phone || '').replace(/[^0-9+]/g, '')}}" class="btn btn-call" title="Call Business Directly">
               &#128222; Call Owner
             </a>
             ${{l.maps_link ? `<a href="${{l.maps_link}}" target="_blank" class="btn btn-outline" title="Open Google Maps Profile" style="color:#38bdf8;">&#128205; Google Maps</a>` : ''}}
