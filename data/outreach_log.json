@@ -3,9 +3,8 @@
     "dr.sharma.apexjaipur@gmail.com",
     "info@youdent.in",
     "jaijinendradental@gmail.com",
-    "jaipur@allen.in",
-    "sales@ashianahousing.com",
-    "vaishalinagar@anytimefitness.in"
+    "vaishalinagar@anytimefitness.in",
+    "info@asgeyehospital.com"
   ],
   "history": [
     {
@@ -48,90 +47,74 @@
       "business": "Jai Jinendra Dental Hospital"
     },
     {
-      "timestamp": "2026-11-24T16:48:07.026242",
+      "timestamp": "2026-11-26T12:53:02.269646+05:30",
       "type": "job_application",
-      "recipient": "hr@prohed.com",
-      "company": "PROHED Digital Solutions",
-      "title": "PPC & Performance Marketing Executive"
+      "recipient": "hr@octalsoftware.com",
+      "company": "Octal IT Solution",
+      "title": "Performance Marketing & Lead Gen Executive"
     },
     {
-      "timestamp": "2026-11-24T16:48:07.026242",
-      "type": "client",
-      "recipient": "jaipur@allen.in",
-      "business": "Allen Career Institute (Gopalpura Campus)"
-    },
-    {
-      "timestamp": "2026-11-25T13:20:49.005776",
+      "timestamp": "2026-11-26T12:53:02.269646+05:30",
       "type": "job_application",
-      "recipient": "career@vervelogic.com",
-      "company": "VerveLogic LLC",
-      "title": "Digital Growth Strategist & Campaign Lead"
+      "recipient": "hr@brandhype.in",
+      "company": "Brandhype.in",
+      "title": "Digital Marketing Specialist (Ads + SEO)"
     },
     {
-      "timestamp": "2026-11-25T13:20:49.005776",
-      "type": "client",
-      "recipient": "sales@ashianahousing.com",
-      "business": "Ashiana Townships & Real Estate"
-    },
-    {
-      "timestamp": "2026-11-25T22:39:42.383708",
-      "type": "job_application",
-      "recipient": "careers@adglobal360.com",
-      "company": "AdGlobal360 India",
-      "title": "Google Ads & PPC Campaign Associate"
-    },
-    {
-      "timestamp": "2026-11-25T22:39:42.383708",
+      "timestamp": "2026-11-26T12:53:02.269646+05:30",
       "type": "client",
       "recipient": "vaishalinagar@anytimefitness.in",
       "business": "Anytime Fitness (Queens Road Branch)"
+    },
+    {
+      "timestamp": "2026-11-26T12:53:02.269646+05:30",
+      "type": "client",
+      "recipient": "info@asgeyehospital.com",
+      "business": "ASG Eye Hospital (Jaipur)"
     }
   ],
   "sent_jobs": [
     "hr@techtail.in",
     "hiring@prohed.com",
     "sales@crinze.com",
-    "hr@prohed.com",
-    "career@vervelogic.com",
-    "careers@adglobal360.com"
+    "hr@octalsoftware.com",
+    "hr@brandhype.in"
   ],
   "notified_telegram": [
-    "job-tt-jaipur-25nov",
-    "job-23nov-office-01",
-    "lead-anytimefitness-vaishali-24nov",
-    "lead-allen-gopalpura-24nov",
-    "job-remote-scaleup-24nov",
-    "job-digitalorix-jaipur-25nov",
-    "lead-allen-gopalpura-25nov",
-    "lead-kotputli-diagnostics-25nov",
     "remotive-2091173",
-    "remotive-2091166",
-    "lead-youdent-mansarovar-25nov",
-    "lead-anytimefitness-jaipur",
-    "lead-youdent-jaipur",
-    "lead-jaijinendra-durgapura-24nov",
-    "job-office-jaipur-01",
-    "job-prohed-gurugram-25nov",
-    "lead-sohna-gym-gurgaon-24nov",
-    "lead-jaijinendra-jaipur",
-    "lead-anytimefitness-vaishali-25nov",
-    "lead-goldsgym-jaipur",
-    "job-23nov-office-02",
-    "lead-alwartownship-alwar-24nov",
-    "remotive-2091177",
-    "job-crinze-jaipur-25nov",
-    "job-prohed-gurugram-24nov",
-    "lead-jaijinendra-durgapura-25nov",
-    "job-office-gurugram-01",
-    "job-wfh-01",
-    "job-23nov-wfh-01",
-    "job-adglobal-gurgaon-25nov",
-    "lead-sanjeevani-alwar",
-    "job-vervelogic-jaipur-24nov",
-    "lead-kotputli-diagnostics-24nov",
-    "lead-alwartownship-alwar-25nov",
+    "job-remote-scaleup-24nov",
     "lead-skyearth-neemrana",
-    "job-remote-growthx-25nov"
+    "lead-jaijinendra-durgapura-24nov",
+    "job-wfh-01",
+    "job-brandhype-gurgaon-26nov",
+    "himalayas-57108997",
+    "lead-anytimefitness-jaipur",
+    "lead-sanjeevani-alwar",
+    "job-office-jaipur-01",
+    "lead-goldsgym-jaipur",
+    "lead-jaijinendra-jaipur",
+    "jobicy-164282",
+    "job-23nov-office-01",
+    "lead-anytimefitness-vaishali-26nov",
+    "lead-vlcc-malviyanagar-26nov",
+    "job-23nov-wfh-01",
+    "lead-jaijinendra-durgapura-26nov",
+    "lead-allen-gopalpura-26nov",
+    "job-23nov-office-02",
+    "job-saginfotech-jaipur-26nov",
+    "remotive-2091177",
+    "job-adglobal-gurgaon-26nov",
+    "job-office-gurugram-01",
+    "job-octal-jaipur-26nov",
+    "lead-youdent-jaipur",
+    "jobicy-156983",
+    "job-digidarts-gurgaon-26nov",
+    "lead-asg-eye-jaipur-26nov",
+    "lead-sohna-gym-gurgaon-24nov",
+    "lead-clovedental-jaipur-26nov",
+    "lead-ashiana-alwar-26nov",
+    "lead-anytimefitness-vaishali-24nov",
+    "lead-goldsgym-cscheme-26nov"
   ],
   "replied_contacts": [
     "no-reply@accounts.google.com",
